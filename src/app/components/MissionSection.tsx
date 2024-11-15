@@ -9,13 +9,7 @@ const missions = [
     id: 1,
     title: "Space Mission",
     description: "An astronaut working outside a spacecraft, exploring the wonders of space.",
-    image: "/images/space-mission.jpg", // Make sure the image is saved as space-mission.jpg in the public/images folder
-  },
-  {
-    id: 2,
-    title: "Apollo 11",
-    description: "The first successful manned mission to the Moon.",
-    image: "/images/apollo-11.jpg", // Ensure the image path is correct and the image exists in the public/images folder
+    image: "/images/space-mission.jpg", // Make sure this image exists in public/images
   },
   {
     id: 3,
@@ -34,8 +28,10 @@ const missions = [
 const MissionsSection = () => {
   return (
     <div className="container mx-auto py-16 px-4 bg-black text-white">
-      <h2 className="text-4xl font-bold text-center mb-8 text-blue-400">Space Missions</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <h2 className="text-4xl font-bold text-center mb-8 text-blue-400">
+        Space Missions
+      </h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {missions.map((mission) => (
           <motion.div
             key={mission.id}
@@ -51,14 +47,14 @@ const MissionsSection = () => {
               className="w-full h-48 object-cover rounded-md mb-4"
             />
             <motion.h3
-              className="text-2xl font-bold mb-2"
+              className="text-xl lg:text-2xl font-bold mb-2"
               style={{
-                textShadow: '0 0 5px rgba(255, 255, 255, 0.7)',
+                textShadow: "0 0 5px rgba(255, 255, 255, 0.7)",
               }}
             >
               {mission.title}
             </motion.h3>
-            <p className="text-gray-300">{mission.description}</p>
+            <p className="text-gray-300 text-sm md:text-base">{mission.description}</p>
           </motion.div>
         ))}
       </div>
@@ -67,6 +63,10 @@ const MissionsSection = () => {
 };
 
 export default MissionsSection;
+
+
+
+
 
 
 
