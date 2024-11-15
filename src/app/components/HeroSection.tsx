@@ -12,15 +12,18 @@ const HeroSection = () => {
   };
 
   return (
-
+    <section
+      className="min-h-screen bg-cover bg-center bg-fixed flex flex-col items-center justify-center text-white"
+      style={{ backgroundImage: 'url(/images/space-background.jpg)' }}
+    >
       <motion.div
-        className="z-20 max-w-xl text-center"
+        className="z-20 max-w-xl text-center px-4"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 2 }}
       >
         <motion.h1
-          className="text-6xl md:text-8xl font-bold text-white mb-4"
+          className="text-6xl md:text-8xl font-bold mb-4 leading-tight"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 2 }}
@@ -28,30 +31,25 @@ const HeroSection = () => {
           Explore the Universe
         </motion.h1>
         <motion.p
-          className="text-xl text-gray-300 mb-8"
+          className="text-xl md:text-2xl text-gray-300 mb-8"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 2 }}
         >
           Discover planets, missions, and technologies beyond Earth.
         </motion.p>
-        <button
-          className="bg-gradient-to-r from-purple-500 to-blue-500 text-white px-6 py-3 rounded-md hover:scale-105 transition duration-300"
+        <motion.button
+          className="bg-gradient-to-r from-purple-500 to-blue-500 text-white px-6 py-3 rounded-md hover:scale-105 transition-transform duration-300"
           onClick={handleButtonClick}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.5, duration: 2 }}
         >
           Start Your Journey
-        </button>
+        </motion.button>
       </motion.div>
-
-
+    </section>
   );
 };
 
 export default HeroSection;
-
-
-
-
-
-
-

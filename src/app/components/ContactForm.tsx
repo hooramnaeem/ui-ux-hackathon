@@ -1,4 +1,3 @@
-
 // src/components/ContactForm.tsx
 "use client";
 
@@ -8,11 +7,13 @@ const ContactForm = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = (e) => {
+  // Type the event parameter for handleChange
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  // Type the event parameter for handleSubmit
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // Handle form submission here (e.g., sending to an API)
     setSubmitted(true);
@@ -61,3 +62,4 @@ const ContactForm = () => {
 };
 
 export default ContactForm;
+

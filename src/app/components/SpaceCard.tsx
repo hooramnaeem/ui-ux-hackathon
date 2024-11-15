@@ -1,5 +1,6 @@
 // src/components/SpaceCard.tsx
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 interface SpaceCardProps {
   title: string;
@@ -13,7 +14,13 @@ const SpaceCard: React.FC<SpaceCardProps> = ({ title, description, imageSrc }) =
     whileHover={{ scale: 1.05, boxShadow: "0px 0px 12px rgba(0, 0, 0, 0.8)" }}
     transition={{ duration: 0.3 }}
   >
-    <img src={imageSrc} alt={title} className="rounded-t-lg mb-4 w-full h-40 object-cover" />
+    <Image
+      src={imageSrc}
+      alt={title}
+      width={400}       // Specify an appropriate width
+      height={160}      // Specify an appropriate height
+      className="rounded-t-lg mb-4 w-full object-cover"
+    />
     <h2 className="text-xl font-bold text-white">{title}</h2>
     <p className="text-gray-400 mt-2">{description}</p>
   </motion.div>

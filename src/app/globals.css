@@ -2,21 +2,51 @@
 @tailwind components;
 @tailwind utilities;
 
-
-/* Navbar Styles */
 nav {
-  backdrop-filter: blur(5px); /* Smooth blur for glass effect */
-}
-
-/* src/styles/globals.css */
-
-/* Make navbar sticky */
-nav {
+  backdrop-filter: blur(5px);
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
+/* :root variables */
+:root {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* Global styles */
+body, html {
+  color: #ffffff;
+  font-family: var(--font-sans), sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+/* Background */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/images/space-background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -1;
+}
+
+/* Navbar Styles */
+nav {
+  backdrop-filter: blur(5px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
 
 nav a {
   color: white;
@@ -26,82 +56,22 @@ nav a {
 }
 
 nav a:hover {
-  color: #0a84ff; /* Highlight color for links */
+  color: #0a84ff;
 }
 
-/* src/styles/globals.css */
-
-/* Styling for the search input */
-input[type='text'] {
-  border: 1px solid #333;
-  transition: border-color 0.2s;
-}
-
-input[type='text']:focus {
-  border-color: #0a84ff;
-}
-
-/* Additional padding for navbar items */
-.navbar-item {
-  padding: 0 1rem; /* Adjust the padding to space items */
-}
-
-
-/* Global body styles */
-body, html {
-  color: #ffffff; /* White text for contrast */
-  font-family: 'Inter', sans-serif; /* Clean and modern font */
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden; /* Prevent horizontal overflow */
-  height: 100%; /* Ensure body fills the viewport */
-}
-
-/* Starry background applied to the body */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
+/* Input Styles */
+input[type='text'], textarea {
+  background-color: rgba(17, 17, 17, 0.8);
+  color: #ffffff;
+  border: 1px solid #333333;
+  padding: 0.75rem;
+  border-radius: 8px;
   width: 100%;
-  height: 100%;
-  background-image: url('/images/space-background.jpg'); /* Make sure this image is in your public/images folder */
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  z-index: -1; /* Ensure it stays behind all content */
-  opacity: 1; /* Full visibility for the starry effect */
+  margin-top: 0.75rem;
 }
 
-/* Global heading styles */
-h1, h2, h3 {
-  font-weight: 700;
-  margin: 1rem 0;
-  text-align: center;
-  color: #ffffff; /* White for high contrast */
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Glow effect for readability */
-  z-index: 1; /* Ensure text stays above the starfield */
-}
-
-/* Individual heading sizes */
-h1 {
-  font-size: 3rem;
-}
-
-h2 {
-  font-size: 2.5rem;
-}
-
-h3 {
-  font-size: 2rem;
-}
-
-/* Global container styles */
-.container {
-  padding: 2rem;
-  margin: 0 auto;
-  max-width: 1200px; /* Center the content and limit the width */
-  z-index: 1; /* Ensure container content stays above the starfield */
+input::placeholder, textarea::placeholder {
+  color: #888888;
 }
 
 /* Button styles */
@@ -113,33 +83,20 @@ button {
   padding: 0.75em 2em;
   cursor: pointer;
   transition: transform 0.3s;
-  font-size: 1rem;
-  z-index: 1; /* Ensure button stays above the starfield */
 }
 
 button:hover {
   transform: scale(1.05);
 }
 
-/* Link styles */
-a {
-  color: #0a84ff;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #6a0dad;
-}
-
 /* Footer styles */
 footer {
-  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  background-color: rgba(0, 0, 0, 0.7);
   color: #ffffff;
   padding: 2rem 0;
   text-align: center;
   font-size: 0.9rem;
   border-top: 1px solid #333333;
-  z-index: 1; /* Ensure footer stays above the starfield */
 }
 
 footer a {
@@ -148,50 +105,6 @@ footer a {
 
 footer a:hover {
   color: #6a0dad;
-}
-
-/* Form Inputs */
-input, textarea {
-  background-color: rgba(17, 17, 17, 0.8);
-  color: #ffffff;
-  border: 1px solid #333333;
-  padding: 0.75rem;
-  border-radius: 8px;
-  width: 100%;
-  margin-top: 0.75rem;
-  z-index: 1; /* Ensure inputs stay above the starfield */
-}
-
-input::placeholder, textarea::placeholder {
-  color: #888888;
-}
-
-input:focus, textarea:focus {
-  border-color: #0a84ff;
-  outline: none;
-}
-
-/* Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #111111;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #555555;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #777777;
-}
-
-/* src/styles/globals.css */
-html {
-  scroll-behavior: smooth;
 }
 
 /* Scroll to top button styles */
@@ -208,28 +121,9 @@ html {
   display: none;
 }
 
-
-/* Responsive styles */
+/* Responsive heading sizes */
 @media (max-width: 768px) {
-  h1 {
-    font-size: 2.5rem;
-  }
-
-  h2 {
-    font-size: 2rem;
-  }
-
-  h3 {
-    font-size: 1.5rem;
-  }
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 2rem; }
+  h3 { font-size: 1.5rem; }
 }
-
-
-
-
-
-
-
-
-
-

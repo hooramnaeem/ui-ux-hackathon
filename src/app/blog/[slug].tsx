@@ -1,8 +1,14 @@
-// src/pages/blog/[slug].tsx
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
-const posts = [
+interface Post {
+  id: number;
+  title: string;
+  slug: string;
+  content: string;
+}
+
+const posts: Post[] = [
   {
     id: 1,
     title: "The Mysteries of Black Holes",
@@ -20,7 +26,7 @@ const posts = [
 const BlogPost = () => {
   const router = useRouter();
   const { slug } = router.query;
-  const [post, setPost] = useState(null);
+  const [post, setPost] = useState<Post | null>(null);
 
   useEffect(() => {
     if (slug) {
@@ -44,5 +50,3 @@ const BlogPost = () => {
 };
 
 export default BlogPost;
-
-

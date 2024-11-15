@@ -34,7 +34,7 @@ const ContactPage = () => {
             name="message"
             className="w-full p-3 rounded-md bg-gray-800 text-white border border-gray-700"
             placeholder="Enter your message"
-            rows="4"
+            rows={4} 
           ></textarea>
         </div>
         <button
@@ -49,6 +49,7 @@ const ContactPage = () => {
 };
 
 export default ContactPage;
+
 
 
 

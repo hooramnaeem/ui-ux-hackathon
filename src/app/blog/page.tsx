@@ -3,9 +3,17 @@
 
 import BlogSection from '../components/BlogSection';
 
+// Define the Post interface directly in this file
+interface Post {
+  id: number;
+  title: string;
+  excerpt: string;
+  content: string;
+}
+
 const BlogPage = () => {
-  // Mock blog posts data
-  const posts = [
+  // Define the posts array with an explicit type of Post[]
+  const posts: Post[] = [
     {
       id: 1,
       title: "The Mysteries of Black Holes",
@@ -26,10 +34,9 @@ const BlogPage = () => {
   return (
     <div className="container mx-auto py-16">
       <h1 className="text-4xl font-bold text-center mb-8">Blog</h1>
-      <BlogSection posts={posts} />
+      <BlogSection posts={posts} /> {/* Make sure BlogSection is typed to accept posts */}
     </div>
   );
 };
 
 export default BlogPage;
-

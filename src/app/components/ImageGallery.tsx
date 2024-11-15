@@ -2,6 +2,7 @@
 "use client";
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const images = [
   { src: "/images/galaxy.jpg", alt: "Galaxy" },
@@ -18,11 +19,16 @@ const ImageGallery = () => (
           key={index}
           className="relative overflow-hidden rounded-lg shadow-lg"
           whileHover={{ scale: 1.05 }}
+          transition={{ duration: 0.3 }}
         >
-          <img
+          <Image
             src={image.src}
             alt={image.alt}
-            className="w-full h-64 object-cover"
+            width={600}          // Adjust as needed for your layout
+            height={400}         // Adjust as needed for your layout
+            layout="responsive"  // Makes the image responsive
+            className="object-cover"
+            priority={index === 0} // Optionally prioritize the first image for faster loading
           />
         </motion.div>
       ))}
