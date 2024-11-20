@@ -11,8 +11,8 @@ const AnimatedButton: React.FC<AnimatedButtonProps> = ({ text, onClick }) => (
     whileHover={{ scale: 1.05, boxShadow: "0px 0px 8px rgba(255, 255, 255, 0.5)" }}
     whileTap={{ scale: 0.95 }}
     onClick={onClick}
-    className="bg-gradient-to-r from-blue-500 to-purple-500 text-white py-2 px-6 rounded-md transition duration-300"
-  >
+    className="inline-block bg-green-900 text-white px-6 py-2 rounded-lg hover:bg-green-800 transition duration-300"
+    >
     {text}
   </motion.button>
 );

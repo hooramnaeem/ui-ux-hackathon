@@ -1,39 +1,136 @@
-// src/pages/about.tsx
 "use client";
 
-const AboutPage = () => (
-  <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center px-8">
-    <h1 className="text-4xl md:text-6xl font-bold mb-6">About Space Explorer</h1>
-    <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-3xl text-center mb-4">
-      Welcome to <strong>Space Explorer</strong>, we believe that the universe is full of wonders waiting to be discovered. Our mission is to bring the mysteries of space, planets, and technology to your screen in a way that is engaging, informative, and accessible. We aim to inspire curiosity and a love for science in every individual who visits our platform.
-    </p>
-    <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-3xl text-center mb-4">
-      Started by a team of space enthusiasts and tech experts, Space Explorer was built to create a digital gateway to the cosmos. We work with leading scientists, astronomers, and innovators to deliver accurate and fascinating insights about celestial phenomena, space missions, and emerging space technologies.
-    </p>
-    <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-3xl text-center mb-4">
-      Our goal is simple: to ignite your imagination and provide a virtual window into the vast and beautiful universe. Whether you’re an aspiring astronaut, a seasoned space enthusiast, or someone curious about the cosmos, <strong>Space Explorer</strong> is your home for all things space. Explore with us, and let’s unravel the mysteries of the universe, one discovery at a time.
-    </p>
-    <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-3xl text-center mb-8">
-      We also want to hear from you! Feel free to <a href="/contact" className="text-blue-500 hover:underline">get in touch</a> with any questions, collaborations, or ideas. The universe is vast, but together, we can explore its wonders.
-    </p>
+import { FaLaptopCode, FaHandsHelping, FaLightbulb, FaRocket, FaGraduationCap } from "react-icons/fa";
+import Image from "next/image";
 
-    {/* Author Information Section */}
-    <h2 className="text-3xl font-bold mb-4">About the Author</h2>
-    <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-3xl text-center mb-4">
-      My name is <strong>Muqaddas Fatima</strong>, the creator behind <strong>Space Explorer</strong>. I am a passionate space enthusiast, developer, and digital creator with a mission to bring the wonders of the universe to everyone. My love for space and technology drives me to explore new ways to make complex scientific topics accessible and engaging for all.
-    </p>
-    <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-3xl text-center mb-4">
-      I have a background in tech development and have worked on several projects that merge my passion for science with modern digital tools. I believe that space is not just about exploration—it's about inspiration and a collective journey into the unknown.
-    </p>
-    <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-3xl text-center">
-      When I'm not working on <strong>Space Explorer</strong>, you’ll find me reading about space missions, experimenting with new tech tools, or sharing insights with the space-loving community on social media. Connect with me on <a href="https://www.linkedin.com/in/muqaddas-fatima-6aaa0a2b3" className="text-blue-500 hover:underline" target="_blank" rel="noopener noreferrer">LinkedIn</a>, follow my updates on <a href="https://www.instagram.com/muqaddas_fatima25" className="text-blue-500 hover:underline" target="_blank" rel="noopener noreferrer">Instagram</a>, or check out my code and projects on <a href="https://github.com/muqaddasfatima576" className="text-blue-500 hover:underline" target="_blank" rel="noopener noreferrer">GitHub</a>.
-    </p>
-  </div>
-);
+const About = () => {
+  return (
+    <div className="bg-gray-100 text-gray-900 min-h-screen py-16 px-8">
+      {/* Main Container */}
+      <div className="container mx-auto max-w-4xl">
+        {/* Profile Section */}
+        <div className="flex flex-col items-center mb-12">
+          <Image
+            src="/images/profile.jpg" // Replace with your actual profile image path
+            alt="Profile Picture"
+            width={150}
+            height={150}
+            className="rounded-full border-4 border-green-700 shadow-[0_0_20px_rgba(72,187,120,0.8)] mb-4"
+          />
+          <h1 className="text-5xl font-bold text-green-900 mb-4">
+            About Me <FaLightbulb className="inline-block text-yellow-500 ml-2" />
+          </h1>
+          <p className="text-lg text-gray-700 text-center">
+            Hi, I'm <span className="font-bold text-green-900">Muqaddas Fatima</span>, a passionate{" "}
+            <span className="text-green-700 font-semibold">
+              Student of IT, Cloud Computing, Gen AI, Web 3.0, and Full Stack Development at GIAIC Karachi.
+            </span>{" "}
+            Dedicated to building <span className="italic">scalable</span>,{" "}
+            <span className="italic">efficient</span>, and{" "}
+            <span className="italic">visually appealing web applications</span>. 🚀
+          </p>
+        </div>
 
-export default AboutPage;
+        {/* Experience Section */}
+        <div className="mb-12">
+          <h2 className="text-3xl font-bold text-green-900 mb-6">
+            Experience <FaGraduationCap className="inline-block ml-2" />
+          </h2>
+          <div className="space-y-6">
+            <div className="bg-white shadow-md rounded-lg p-6">
+              <h3 className="text-2xl font-bold text-green-700 mb-2">
+                Senior Student at GIAIC{" "}
+                <span role="img" aria-label="medal">
+                  🏆
+                </span>
+              </h3>
+              <p className="text-gray-700">
+                Recognized as a top-performing student among 1,500 peers for academic excellence and leadership
+                in IT, cloud computing, and software development. I have consistently been involved in mentoring
+                and guiding fellow students on innovative projects.
+              </p>
+            </div>
+            <div className="bg-white shadow-md rounded-lg p-6">
+              <h3 className="text-2xl font-bold text-green-700 mb-2">
+                Full-Stack Developer Intern{" "}
+                <span role="img" aria-label="laptop">
+                  💻
+                </span>
+              </h3>
+              <p className="text-gray-700">
+                Collaborated on building dynamic web applications and participated in end-to-end development
+                cycles, leveraging modern technologies like React, Node.js, and Tailwind CSS.
+              </p>
+            </div>
+          </div>
+        </div>
 
+        {/* Skills Section */}
+        <div className="mb-12">
+          <h2 className="text-3xl font-bold text-green-900 mb-4">
+            What I Do <FaLaptopCode className="inline-block ml-2" />
+          </h2>
+          <ul className="list-disc list-inside space-y-4 text-gray-800">
+            <li>
+              <span className="text-green-700 font-bold">Front-End Development:</span> Crafting user-friendly
+              interfaces using technologies like React, Next.js, and Tailwind CSS. 🎨
+            </li>
+            <li>
+              <span className="text-green-700 font-bold">Back-End Development:</span> Building robust APIs and
+              scalable systems with Node.js, FastAPI, and SQL. ⚙️
+            </li>
+            <li>
+              <span className="text-green-700 font-bold">Team Collaboration:</span> Thriving in collaborative
+              environments and always eager to learn from my peers. 🤝
+            </li>
+            <li>
+              <span className="text-green-700 font-bold">Creative Problem Solving:</span> Approaching challenges
+              with an innovative mindset and delivering efficient solutions. 💡
+            </li>
+          </ul>
+        </div>
 
+        {/* Values Section */}
+        <div className="mb-12">
+          <h2 className="text-3xl font-bold text-green-900 mb-4">
+            My Values <FaHandsHelping className="inline-block ml-2" />
+          </h2>
+          <p className="text-lg leading-relaxed text-gray-700">
+            I believe in the power of <span className="font-bold text-green-900">collaboration</span> and
+            innovation to create solutions that make a positive impact. My work is guided by:
+          </p>
+          <ul className="list-disc list-inside space-y-4 text-gray-800 mt-4">
+            <li>
+              <span className="text-green-700 font-bold">Integrity:</span> Staying true to my principles and
+              maintaining transparency in all my endeavors. 🙌
+            </li>
+            <li>
+              <span className="text-green-700 font-bold">Continuous Learning:</span> Exploring new technologies
+              and trends to stay ahead in the tech world. 📚
+            </li>
+            <li>
+              <span className="text-green-700 font-bold">Empathy:</span> Designing solutions that prioritize user
+              needs and deliver exceptional experiences. 💖
+            </li>
+          </ul>
+        </div>
 
+        {/* Fun Facts Section */}
+        <div>
+          <h2 className="text-3xl font-bold text-green-900 mb-4">
+            Fun Facts About Me <FaRocket className="inline-block ml-2" />
+          </h2>
+          <ul className="list-disc list-inside space-y-4 text-gray-800">
+            <li>
+              🌍 I love traveling and exploring different cultures. Every journey inspires my creativity!
+            </li>
+            <li>☕ I'm a coffee enthusiast who believes that great ideas are brewed over a good cup of coffee.</li>
+            <li>🎨 When not coding, I enjoy sketching and experimenting with digital art.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+};
 
-
+export default About;

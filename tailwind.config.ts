@@ -9,8 +9,10 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: '#0a84ff',  // Custom primary color for branding or highlights
-        secondary: '#6a0dad', // Custom secondary color for accents
+        primary: '#000000',  // Custom primary color for branding or highlights
+        secondary: '#555555', // Custom secondary color for accents
+        accent: '#1F5591', // Adjust for the blue shade used
+      
       },
       fontFamily: {
         sans: ['var(--font-geist-sans)', 'sans-serif'], // Custom sans-serif font

@@ -1,35 +1,25 @@
-// src/components/Navbar.tsx
 "use client";
 
-import { useState } from 'react';
-import Link from 'next/link';
+import { useState } from "react";
+import Link from "next/link";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+  const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <nav className="bg-black text-white sticky top-0 z-50 shadow-md">
+    <nav className="bg-white sticky top-0 z-50 shadow-md">
       <div className="container mx-auto flex justify-between items-center py-4 px-6">
         {/* Logo */}
         <div className="text-xl font-bold flex items-center">
-          <img
-            src="/images/MF-logo.png" // Make sure the logo is in public/images folder
-            alt="Logo"
-           width={40}
-        height={40}
-        className="rounded-full"
-          />
-          <span>Space Explorer</span>
+          <span className="ml-5 text-green-900">Muqaddas Fatima Portfolio</span>
         </div>
 
         {/* Hamburger Menu for Mobile */}
         <button
-          className="text-white block md:hidden"
           onClick={toggleMenu}
+          className="text-green-900 block md:hidden"
           aria-label="Toggle Menu"
         >
           <svg
@@ -50,24 +40,39 @@ const Navbar = () => {
 
         {/* Navigation Links */}
         <div
-          className={`absolute md:relative bg-black md:bg-transparent top-16 md:top-0 left-0 w-full md:w-auto flex flex-col md:flex-row items-center md:items-center space-y-4 md:space-y-0 md:space-x-6 transition-all duration-300 ${
+          className={`absolute md:relative bg-white md:bg-transparent top-16 md:top-0 left-0 w-full md:w-auto flex flex-col md:flex-row items-center md:items-center space-y-4 md:space-y-0 md:space-x-6 transition-all duration-300 ${
             isOpen ? "block" : "hidden md:flex"
           }`}
         >
-          <Link href="/" className="hover:text-blue-400">
+          <Link
+            href="/"
+            className="inline-block bg-gradient-to-r from-green-900 to-green-500 text-white py-2 px-6 rounded-full hover:scale-105 transition duration-300"
+            >
             Home
           </Link>
-          <Link href="/about" className="hover:text-blue-400">
+          <Link
+            href="/about"
+            className="inline-block bg-gradient-to-r from-green-900 to-green-500 text-white py-2 px-6 rounded-full hover:scale-105 transition duration-300"
+            >
             About
           </Link>
-          <Link href="/missions" className="hover:text-blue-400">
-            Missions
+          <Link
+            href="/projects"
+            className="inline-block bg-gradient-to-r from-green-900 to-green-500 text-white py-2 px-6 rounded-full hover:scale-105 transition duration-300"
+            >
+            Projects
           </Link>
-          <Link href="/contact" className="hover:text-blue-400">
-            Contact
-          </Link>
-          <Link href="/blog" className="hover:text-blue-400">
+          <Link
+            href="/blog"
+            className="inline-block bg-gradient-to-r from-green-900 to-green-500 text-white py-2 px-6 rounded-full hover:scale-105 transition duration-300"
+            >
             Blog
+          </Link>
+          <Link
+            href="/contact"
+            className="inline-block bg-gradient-to-r from-green-900 to-green-500 text-white py-2 px-6 rounded-full hover:scale-105 transition duration-300"
+          >
+            Contact
           </Link>
         </div>
       </div>

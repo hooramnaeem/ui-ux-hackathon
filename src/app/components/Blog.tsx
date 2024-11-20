@@ -1,29 +1,38 @@
-// src/pages/blog.tsx
 "use client";
 
-import BlogList from '../components/BlogList';
+import { useParams } from "next/navigation";
 
-// Sample blog posts
-const posts = [
-  {
-    id: 1,
-    title: "The Mysteries of Black Holes",
-    excerpt: "An exploration into the enigmatic black holes...",
-    date: "2024-10-25"
-  },
-  {
-    id: 2,
-    title: "Mars Colonization: The Next Step",
-    excerpt: "What would it take to establish human life on Mars?",
-    date: "2024-10-20"
-  },
-];
+const BlogPostPage = () => {
+  const { id } = useParams();
 
-const BlogPage = () => (
-  <div className="min-h-screen flex flex-col items-center bg-black text-white p-8">
-    <h1 className="text-4xl font-bold mb-8">Blog</h1>
-    <BlogList posts={posts} />
-  </div>
-);
+  // Mock data for testing (replace with real API/data fetch later)
+  const posts = [
+    {
+      id: "1",
+      title: "My Journey as a Full-Stack Developer",
+      content: "Here's the detailed content of my journey as a full-stack developer...",
+    },
+    {
+      id: "2",
+      title: "How I Built a Resume Builder",
+      content: "Here's how I built the resume builder project...",
+    },
+  ];
 
-export default BlogPage;
+  // Find the post by id
+  const post = posts.find((p) => p.id === id);
+
+  // If no post is found, render a 404 message
+  if (!post) {
+    return <div className="text-white text-center">Post not found</div>;
+  }
+
+  return (
+    <div className="container mx-auto py-16 text-white">
+      <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
+      <p className="text-lg">{post.content}</p>
+    </div>
+  );
+};
+
+export default BlogPostPage;

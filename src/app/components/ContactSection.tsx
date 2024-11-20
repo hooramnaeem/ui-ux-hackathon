@@ -1,32 +1,64 @@
-// src/pages/contact.tsx
 "use client";
 
-import SocialMediaIcons from '../components/SocialMediaIcons';
+import { useState } from "react";
 
-const ContactPage = () => (
-  <div className="min-h-screen flex flex-col items-center justify-center bg-black text-white p-8">
-    <h1 className="text-4xl font-bold mb-8">Contact Us</h1>
-    <form className="bg-gray-800 p-6 rounded-lg shadow-lg w-full max-w-md mb-8">
-      <div className="mb-4">
-        <label htmlFor="name" className="block text-sm font-medium text-white mb-2">Name</label>
-        <input type="text" id="name" className="bg-gray-700 text-white w-full p-2 rounded-md" placeholder="Your Name" />
-      </div>
-      <div className="mb-4">
-        <label htmlFor="email" className="block text-sm font-medium text-white mb-2">Email</label>
-        <input type="email" id="email" className="bg-gray-700 text-white w-full p-2 rounded-md" placeholder="Your Email" />
-      </div>
-      <div className="mb-4">
-        <label htmlFor="message" className="block text-sm font-medium text-white mb-2">Message</label>
-        <textarea id="message" className="bg-gray-700 text-white w-full p-2 rounded-md" placeholder="Your Message" rows={4}></textarea>
-      </div>
-      <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded-md">
-        Send Message
-      </button>
-    </form>
-    <SocialMediaIcons />
-  </div>
-);
+const ContactForm = () => {
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [submitted, setSubmitted] = useState(false);
 
-export default ContactPage;
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
-  
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setSubmitted(true); // Simulate submission
+  };
+
+  return (
+    <div className="bg-gray-100 p-6 rounded-lg shadow-lg max-w-md mx-auto">
+      <h2 className="text-3xl font-bold text-green-900 mb-4 text-center">Contact Me</h2>
+      <p className="text-center text-gray-700 mb-6">
+        I'm always excited to collaborate on exciting projects or share ideas. Feel free to reach out!
+      </p>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="name"
+          placeholder="Enter your name"
+          value={formData.name}
+          onChange={handleChange}
+          className="w-full p-3 mb-4 bg-white border border-gray-300 text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-green-700"
+          required
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Enter your email"
+          value={formData.email}
+          onChange={handleChange}
+          className="w-full p-3 mb-4 bg-white border border-gray-300 text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-green-700"
+          required
+        />
+        <textarea
+          name="message"
+          placeholder="Enter your message"
+          value={formData.message}
+          onChange={handleChange}
+          className="w-full p-3 mb-4 bg-white border border-gray-300 text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-green-700"
+          rows={5}
+          required
+        />
+        <button
+          type="submit"
+          className="w-full bg-gradient-to-r from-green-900 to-green-500 text-white py-3 rounded-md font-bold hover:shadow-lg hover:scale-105 transition duration-300"
+        >
+          Send Message
+        </button>
+        {submitted && <p className="text-green-900 mt-4 text-center">Thank you for your message!</p>}
+      </form>
+    </div>
+  );
+};
+
+export default ContactForm;

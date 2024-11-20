@@ -8,7 +8,7 @@ const SocialMediaIcons = () => (
       target="_blank"
       rel="noopener noreferrer"
       whileHover={{ scale: 1.1 }}
-      className="hover:text-blue-500"
+      className="hover:text-green-900"
     >
       <i className="fas fa-envelope"></i> Gmail
     </motion.a>
@@ -17,7 +17,7 @@ const SocialMediaIcons = () => (
       target="_blank"
       rel="noopener noreferrer"
       whileHover={{ scale: 1.1 }}
-      className="hover:text-pink-500"
+      className="hover:text-green-900"
     >
       <i className="fab fa-instagram"></i> Instagram
     </motion.a>
@@ -26,7 +26,7 @@ const SocialMediaIcons = () => (
       target="_blank"
       rel="noopener noreferrer"
       whileHover={{ scale: 1.1 }}
-      className="hover:text-blue-500"
+      className="hover:text-green-900"
     >
       <i className="fab fa-linkedin"></i> LinkedIn
     </motion.a>

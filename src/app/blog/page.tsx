@@ -1,40 +1,27 @@
-// src/pages/blog/page.tsx
-"use client";
 
-import BlogSection from '../components/BlogSection';
-
-// Define the Post interface directly in this file
-interface Post {
-  id: number;
-  title: string;
-  excerpt: string;
-  content: string;
-}
+import BlogSection from "../components/BlogSection";
 
 const BlogPage = () => {
-  // Define the posts array with an explicit type of Post[]
-  const posts: Post[] = [
+  const posts = [
     {
       id: 1,
-      title: "The Mysteries of Black Holes",
-      excerpt: "An exploration into the enigmatic black holes...",
-      content: `Black holes are regions of space where gravity is so strong that not even light can escape. 
-      They are formed from the remnants of massive stars and have fascinated scientists for decades. 
-      Let's delve deeper into their mysteries and understand how they shape the universe.`,
+      title: "My Journey as a Full-Stack Developer",
+      excerpt: "Learn about my experience building scalable web applications.",
+      content:
+        "Full-stack development has been a fascinating journey. Starting with my first website, I explored various technologies like React, Next.js, and FastAPI. Along the way, I faced challenges, honed my skills, and discovered the joy of creating impactful projects.",
     },
     {
       id: 2,
-      title: "Mars Missions: Past, Present, and Future",
-      excerpt: "Discover the fascinating history of Mars missions...",
-      content: `From the Viking missions to the Perseverance rover, humanity has shown its determination to explore the red planet. 
-      This article covers the past, present, and future plans for Mars exploration, highlighting major missions and their discoveries.`,
+      title: "How I Built a Resume Builder",
+      excerpt: "The challenges and triumphs of creating a functional Resume Builder.",
+      content:
+        "Developing the Resume Builder was a rewarding experience. I learned to design user-friendly interfaces, implement backend features, and ensure the application was scalable and efficient.",
     },
   ];
 
   return (
-    <div className="container mx-auto py-16">
-      <h1 className="text-4xl font-bold text-center mb-8">Blog</h1>
-      <BlogSection posts={posts} /> {/* Make sure BlogSection is typed to accept posts */}
+    <div className="bg-gray-300 min-h-screen py-16">
+      <BlogSection posts={posts} />
     </div>
   );
 };

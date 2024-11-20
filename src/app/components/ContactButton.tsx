@@ -1,13 +1,14 @@
 // src/components/ContactButton.tsx
 "use client";
 
+import Link from "next/link";
+
 const ContactButton = () => (
-  <button
-    onClick={() => window.location.href = '/contact'}
-    className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md"
-  >
-    Contact Us
-  </button>
+  <Link href="/contact">
+    <button className="bg-gradient-to-r from-green-900 to-green-500 text-white py-2 px-6 rounded-md transition duration-300 hover:scale-105">
+      Contact Us
+    </button>
+  </Link>
 );
 
 export default ContactButton;

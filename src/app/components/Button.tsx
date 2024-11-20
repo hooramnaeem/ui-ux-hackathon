@@ -1,5 +1,6 @@
-// src/components/Button.tsx
-import { motion } from 'framer-motion';
+"use client";
+
+import { motion } from "framer-motion";
 
 interface ButtonProps {
   text: string;
@@ -8,10 +9,10 @@ interface ButtonProps {
 
 const Button: React.FC<ButtonProps> = ({ text, onClick }) => (
   <motion.button
-    whileHover={{ scale: 1.05, boxShadow: "0px 0px 8px rgba(0, 0, 0, 0.5)" }}
+    whileHover={{ scale: 1.05, boxShadow: "0px 0px 8px rgba(0, 128, 0, 0.5)" }}
     whileTap={{ scale: 0.95 }}
     onClick={onClick}
-    className="bg-gradient-to-r from-blue-500 to-purple-500 text-white py-2 px-6 rounded-md transition duration-300"
+    className="bg-gradient-to-r from-green-900 to-green-500 text-white py-2 px-6 rounded-full transition duration-300"
   >
     {text}
   </motion.button>
