@@ -28,69 +28,64 @@ const Music = () => {
   return (
     <section className="min-h-screen bg-white flex justify-center items-center py-20">
       {/* Black Section */}
-      <div className="bg-black text-white w-[90%] max-w-[1200px] rounded-lg flex justify-between items-center p-10 shadow-lg">
+      <div className="bg-black text-white w-[90%] max-w-[1200px] rounded-lg flex flex-col sm:flex-row justify-between items-center p-10 shadow-lg">
         {/* Left Content */}
-        <div className="flex flex-col items-start w-[60%]">
+        <div className="flex flex-col items-start w-full sm:w-[60%] mb-8 sm:mb-0">
           <span className="text-green-500 text-xl font-semibold mb-2">Categories</span>
-          <h1 className="text-4xl font-bold mb-6">Enhance Your Music Experience</h1>
+          <h1 className="text-2xl sm:text-4xl font-bold mb-6">Enhance Your Music Experience</h1>
 
           <div className="flex justify-between gap-4 mb-8">
             {/* Days */}
             <div className="flex flex-col items-center">
-              <div className="w-20 h-20 flex items-center justify-center bg-white rounded-full text-black text-3xl">
+              <div className="w-12 h-12 sm:w-20 sm:h-20 flex items-center justify-center bg-white rounded-full text-black text-lg sm:text-3xl">
                 {days}
               </div>
-              <span className="text-gray-400 mt-2">Days</span>
+              <span className="text-gray-400 mt-2 text-sm sm:text-base">Days</span>
             </div>
 
             {/* Hours */}
             <div className="flex flex-col items-center">
-              <div className="w-20 h-20 flex items-center justify-center bg-white rounded-full text-black text-3xl">
+              <div className="w-12 h-12 sm:w-20 sm:h-20 flex items-center justify-center bg-white rounded-full text-black text-lg sm:text-3xl">
                 {hours}
               </div>
-              <span className="text-gray-400 mt-2">Hours</span>
+              <span className="text-gray-400 mt-2 text-sm sm:text-base">Hours</span>
             </div>
 
             {/* Minutes */}
             <div className="flex flex-col items-center">
-              <div className="w-20 h-20 flex items-center justify-center bg-white rounded-full text-black text-3xl">
+              <div className="w-12 h-12 sm:w-20 sm:h-20 flex items-center justify-center bg-white rounded-full text-black text-lg sm:text-3xl">
                 {minutes}
               </div>
-              <span className="text-gray-400 mt-2">Minutes</span>
+              <span className="text-gray-400 mt-2 text-sm sm:text-base">Minutes</span>
             </div>
 
             {/* Seconds */}
             <div className="flex flex-col items-center">
-              <div className="w-20 h-20 flex items-center justify-center bg-white rounded-full text-black text-3xl">
+              <div className="w-12 h-12 sm:w-20 sm:h-20 flex items-center justify-center bg-white rounded-full text-black text-lg sm:text-3xl">
                 {seconds}
               </div>
-              <span className="text-gray-400 mt-2">Seconds</span>
+              <span className="text-gray-400 mt-2 text-sm sm:text-base">Seconds</span>
             </div>
           </div>
 
-          <button className="bg-green-500 text-white py-3 px-8 rounded text-xl transition-colors duration-300 hover:bg-green-700">
+          <button className="bg-green-500 text-white py-3 px-8 rounded text-lg sm:text-xl transition-colors duration-300 hover:bg-green-700">
             Buy Now
           </button>
         </div>
-{/* Right Image */}
-<div className="w-full sm:w-[80%] flex justify-center sm:justify-end relative mb-9 sm:mb-9">
-  <Image
-    src="/images/music.png"
-    alt="Music"
-    width={600}
-    height={600}
-    className="rounded-lg object-cover sm:object-contain 
-               max-w-[90%] sm:max-w-[80%] h-auto 
-               absolute top-[-100px] sm:top-0 transform -translate-x-1/2 left-1/2"
-  />
-</div>
 
-
-
-
+        {/* Right Image */}
+        <div className="w-full sm:w-[35%] flex justify-center sm:justify-end relative mb-8 sm:mb-0">
+          <Image
+            src="/images/music.png"
+            alt="Music"
+            width={500}
+            height={500}
+            className="rounded-lg object-cover sm:object-contain"
+          />
+        </div>
       </div>
     </section>
   );
 };
 
-export default Music
+export default Music;
