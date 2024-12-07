@@ -1,27 +1,33 @@
-import type { Config } from "tailwindcss";
+// tailwind.config.ts
+
+import type { Config } from 'tailwindcss'
 
 const config: Config = {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
+    './layouts/**/*.{js,ts,jsx,tsx}',
+    './src/**/*.{js,ts,jsx,tsx}',
+    './app/**/*.{js,ts,jsx,tsx}', // if you're using App Directory
   ],
   theme: {
     extend: {
       colors: {
-        primary: '#000000',  // Custom primary color for branding or highlights
-        secondary: '#555555', // Custom secondary color for accents
-        accent: '#1F5591', // Adjust for the blue shade used
-      
+        // Custom colors
+        primary: '#1F5591',  // Example of a primary color
+        secondary: '#FF6347', // Example of a secondary color
       },
       fontFamily: {
-        sans: ['var(--font-geist-sans)', 'sans-serif'], // Custom sans-serif font
-        mono: ['var(--font-geist-mono)', 'monospace'],  // Custom monospace font
+        sans: ['Inter', 'sans-serif'], // Custom font for the project
+        // Add more if needed
+      },
+      spacing: {
+        // Custom spacing if needed
+        '128': '32rem', // Example for custom spacing
       },
     },
   },
   plugins: [],
-};
+}
 
-export default config;
-
+export default config
