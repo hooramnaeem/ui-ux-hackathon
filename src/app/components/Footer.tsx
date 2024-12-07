@@ -145,7 +145,7 @@ function Footer() {
 
       {/* Footer Bottom */}
       <div className="text-center text-gray-500 mt-8">
-        <p>&copy; 2024 Your Company. All rights reserved.</p>
+        <p>&copy; 2024 Muqaddas Fatima. All rights reserved.</p>
       </div>
     </div>
   );

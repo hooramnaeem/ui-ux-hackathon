@@ -11,22 +11,22 @@ function TopBar() {
   };
 
   return (
-    <div className="w-full bg-black text-white text-sm py-2 flex justify-center items-center px-5">
-      {/* Centered Announcement */}
-      <p className="flex-1 text-center">
+    <div className="w-full bg-black text-white text-xs sm:text-sm py-2 flex flex-col sm:flex-row items-center justify-between px-4 sm:px-5">
+      {/* Announcement Section */}
+      <p className="flex-1 text-center mb-2 sm:mb-0">
         <strong>Summer Sale - OFF 50%!</strong> Summer Sale For All Swim Suits
         And Free Express Delivery - OFF 50%!{" "}
         <button className="underline font-bold">Shop Now</button>
       </p>
 
-      {/* Centered Language Selector */}
-      <div className="flex items-center gap-0 mx-2 py-2 px-9">
+      {/* Language Selector */}
+      <div className="flex items-center justify-center sm:justify-end gap-0 py-1 px-3 sm:px-9">
         <label htmlFor="language-select" className="hidden sm:block"></label>
         <select
           id="language-select"
           value={language}
           onChange={handleLanguageChange}
-          className="bg-black text-white"
+          className="bg-black text-white border border-white rounded-sm text-xs sm:text-sm"
         >
           <option value="English">English</option>
           <option value="Spanish">Spanish</option>

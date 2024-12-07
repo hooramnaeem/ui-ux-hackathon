@@ -9,7 +9,7 @@ const FeatureSection = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 text-center">
             {/* Feature 1: Free & Fast Delivery */}
             <div className="flex flex-col items-center">
-              <div className="bg-gray-300 p-4 rounded-full">
+              <div className="bg-gray-300 p-3 rounded-full">
                 <FaTruck className="text-4xl text-black" />
               </div>
               <h3 className="mt-4 font-semibold text-lg">Free & Fast Delivery</h3>

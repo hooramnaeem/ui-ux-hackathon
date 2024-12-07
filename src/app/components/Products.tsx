@@ -5,19 +5,19 @@ import { FaStar, FaEye } from "react-icons/fa"; // Star and Eye icons
 function Products() {
   return (
     <div className="w-full flex justify-center items-center mt-10 mb-10">
-      <div className="w-[80%]">
+      <div className="w-full sm:w-[90%] lg:w-[80%]">
         {/* Top Section */}
         <div className="flex justify-between items-center mb-7">
           <div>
             <span className="border-l-8 border-red-500 text-red-500 font-bold pl-2">This Month</span>
-            <h2 className="text-4xl font-bold mt-2">Best Selling Products</h2>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mt-2">Best Selling Products</h2>
           </div>
           <button className="py-2 px-7 bg-red-500 text-white rounded-md hover:bg-red-600">View All</button>
         </div>
 
         {/* Products Grid */}
-        <div className="w-[100%] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {[
+        <div className="w-full grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+          {[ 
             {
               id: 1,
               img: "/images/jacket.png",
@@ -57,8 +57,8 @@ function Products() {
           ].map((product) => (
             <div key={product.id} className="relative group">
               {/* Product Image */}
-              <div className="w-[200px] h-[170px] bg-gray-200 flex justify-center items-center relative">
-              <Image src={product.img} width={150} height={100} alt={product.name} />
+              <div className="w-full sm:w-[180px] lg:w-[200px] h-[170px] bg-gray-200 flex justify-center items-center relative">
+                <Image src={product.img} width={150} height={100} alt={product.name} />
                 
                 {/* Wishlist and Eye Icons */}
                 <div className="absolute top-2 right-2 space-y-1">
@@ -74,7 +74,7 @@ function Products() {
 
               {/* Product Info */}
               <div className="flex flex-col mt-2">
-                <span className="font-bold">{product.name}</span>
+                <span className="font-bold text-sm sm:text-base">{product.name}</span>
                 {/* Price */}
                 <div className="flex items-center space-x-2">
                   <span className="text-red-500 font-bold">{product.discountedPrice}</span>

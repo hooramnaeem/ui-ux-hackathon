@@ -74,13 +74,13 @@ const Music = () => {
         </div>
 
         {/* Right Image */}
-        <div className="w-[35%]">
+        <div className="w-full sm:w-[90%] flex justify-center sm:justify-end top-[-100px] relative mb-0 sm:mb-0">
           <Image
             src="/images/music.png"
             alt="Music"
-            width={400}
-            height={400}
-            className="rounded-lg"
+            width={600}  // Smaller size for mobile
+            height={600} // Smaller height for mobile
+            className="rounded-lg object-cover sm:object-contain absolute top-[100px] sm:top-0 left-1/2 transform -translate-x-1/2 sm:max-w-[80%] max-w-[100%]"
           />
         </div>
       </div>
@@ -88,4 +88,4 @@ const Music = () => {
   );
 };
 
-export default Music;
+export default Music

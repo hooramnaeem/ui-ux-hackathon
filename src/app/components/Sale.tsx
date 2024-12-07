@@ -42,7 +42,7 @@ function Sale() {
       {/* Flash Sale Section */}
       <div className="w-full flex flex-col items-center mt-10 mb-10">
         {/* Flash Sale Header */}
-        <div className="w-[80%] flex justify-between items-center mb-5">
+        <div className="w-[90%] sm:w-[80%] flex justify-between items-center mb-5">
           <div>
             <span className="border-l-8 border-red-500 text-red-500 font-bold pl-2">Today's</span>
             <h2 className="text-4xl font-bold mt-2">Flash Sales</h2>
@@ -64,9 +64,9 @@ function Sale() {
         </div>
 
         {/* Product Grid */}
-        <div className="w-[80%] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="w-[90%] sm:w-[80%] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {/* Individual Product Cards */}
-          {[
+          {[ 
             {
               id: 1,
               img: "/images/gaming.png",
