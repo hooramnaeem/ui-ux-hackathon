@@ -1,66 +1,154 @@
-"use client";
+'use client';
+import React, { useState } from 'react'; // Import useState for managing the alert
+import Image from 'next/image'; 
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaPaperPlane } from 'react-icons/fa';
 
-const Footer = () => {
+function Footer() {
+  const [email, setEmail] = useState(""); // State for email input
+  const [message, setMessage] = useState(""); // State for the success/error message
+
+  const handleSendEmail = () => {
+    if (!email.includes("@")) { // Check if the email contains '@'
+      setMessage("❌ Please enter a valid email address with '@'.");
+    } else {
+      setMessage("✅ Your email has been sent!");
+    }
+    setTimeout(() => setMessage(""), 3000); // Clear the message after 3 seconds
+  };
+
   return (
-    <footer className="bg-white text-gray-900 py-8 px-6 md:px-12 relative z-50 shadow-lg">
-      <div className="container mx-auto text-center">
-        {/* Social Media Links */}
-        <div className="flex justify-center space-x-6 mb-6">
-          <a
-            href="https://github.com/MuqaddasFatima24"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-600 hover:text-blue-500 transition duration-300"
-            aria-label="GitHub"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-              className="w-6 h-6"
-            >
-              <path d="M12 0a12 12 0 00-3.79 23.392c.6.111.82-.26.82-.577v-2.025c-3.338.725-4.042-1.609-4.042-1.609a3.181 3.181 0 00-1.333-1.757c-1.091-.744.083-.729.083-.729a2.518 2.518 0 011.834 1.232 2.558 2.558 0 003.498.998 2.563 2.563 0 01.764-1.612c-2.666-.307-5.467-1.33-5.467-5.916a4.63 4.63 0 011.232-3.212 4.296 4.296 0 01.117-3.17s1.005-.322 3.294 1.232a11.33 11.33 0 015.996 0c2.29-1.555 3.293-1.232 3.293-1.232a4.3 4.3 0 01.118 3.17 4.63 4.63 0 011.231 3.212c0 4.596-2.805 5.605-5.475 5.902a2.885 2.885 0 01.83 2.229v3.314c0 .319.217.694.828.577A12 12 0 0012 0z" />
-            </svg>
-          </a>
-          <a
-            href="https://www.linkedin.com/in/muqaddas-fatima-6aaa0a2b3/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-600 hover:text-blue-500 transition duration-300"
-            aria-label="LinkedIn"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-              className="w-6 h-6"
-            >
-              <path d="M19 0H5C2.24 0 0 2.24 0 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5V5c0-2.76-2.24-5-5-5zM7.12 19H4.56V9h2.56v10zm-1.28-11.38c-.93 0-1.69-.76-1.69-1.69 0-.93.76-1.69 1.69-1.69s1.69.76 1.69 1.69c0 .93-.76 1.69-1.69 1.69zM20 19h-2.56v-4.66c0-1.11-.02-2.54-1.55-2.54-1.55 0-1.79 1.21-1.79 2.46V19h-2.56V9h2.46v1.37h.04c.34-.65 1.15-1.33 2.37-1.33 2.54 0 3.01 1.67 3.01 3.84V19z" />
-            </svg>
-          </a>
-          <a
-            href="mailto:muqaddasfatima576@gmail.com"
-            className="text-gray-600 hover:text-blue-500 transition duration-300"
-            aria-label="Email"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-              className="w-6 h-6"
-            >
-              <path d="M12 12.713L0 5.25V3l12 7.8L24 3v2.25l-12 7.463zM24 6.75v12c0 1.378-1.122 2.5-2.5 2.5h-19C1.122 21.25 0 20.128 0 18.75v-12l12 7.464L24 6.75z" />
-            </svg>
-          </a>
+    <div className="bg-black text-white py-16">
+      <div className="w-[80%] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
+        {/* Exclusive Section */}
+        <div>
+          <h1 className="text-2xl font-bold mb-4">Exclusive</h1>
+          <ul>
+            <li className="mb-2 font-semibold">
+              <a href="#" className="hover:text-red-500">Subscribe</a>
+            </li>
+            <li className="mb-4 text-gray-400">Get 10% off your first order</li>
+            <div className="flex items-center border border-white rounded-md overflow-hidden">
+              <input
+                type="email"
+                value={email} // Bind the email state to the input
+                onChange={(e) => setEmail(e.target.value)} // Update state on input change
+                placeholder="Enter your email"
+                className="w-full px-3 py-2 text-sm outline-none bg-black text-white"
+              />
+              <button
+                onClick={handleSendEmail} // Call the function when clicked
+                className="p-2 bg-black hover:bg-gray-800 transition-colors"
+              >
+                <FaPaperPlane className="text-white w-5 h-5" />
+              </button>
+            </div>
+            {/* Message Alert */}
+            {message && (
+              <p className="mt-2 text-sm flex items-center gap-2">
+                {message.startsWith("✅") ? (
+                  <span className="text-green-500">{message}</span>
+                ) : (
+                  <span className="text-red-500">{message}</span>
+                )}
+              </p>
+            )}
+          </ul>
         </div>
 
-        {/* Footer Text */}
-        <p className="text-sm text-gray-600">
-          © {new Date().getFullYear()} Muqaddas Fatima. All rights reserved.
-        </p>
+        {/* Support Section */}
+        <div>
+          <h1 className="text-2xl font-bold mb-4">Support</h1>
+          <ul>
+            <li className="mb-2">111 Bijoy Sarani, Dhaka, DH 1515, Bangladesh</li>
+            <li className="mb-2">exclusive@gmail.com</li>
+            <li className="mb-4">+88015-88888-9999</li>
+          </ul>
+        </div>
+
+        {/* Account Section */}
+        <div>
+          <h1 className="text-2xl font-bold mb-4">Account</h1>
+          <ul>
+            <li className="mb-2"><a href="#" className="hover:text-red-500">My Account</a></li>
+            <li className="mb-2"><a href="#" className="hover:text-red-500">Login / Register</a></li>
+            <li className="mb-2"><a href="#" className="hover:text-red-500">Cart</a></li>
+            <li className="mb-2"><a href="#" className="hover:text-red-500">Wishlist</a></li>
+            <li className="mb-4"><a href="#" className="hover:text-red-500">Shop</a></li>
+          </ul>
+        </div>
+
+        {/* Quick Links Section */}
+        <div>
+          <h1 className="text-2xl font-bold mb-4">Quick Links</h1>
+          <ul>
+            <li className="mb-2"><a href="#" className="hover:text-red-500">Privacy Policy</a></li>
+            <li className="mb-2"><a href="#" className="hover:text-red-500">Terms of Use</a></li>
+            <li className="mb-2"><a href="#" className="hover:text-red-500">FAQ</a></li>
+            <li className="mb-4"><a href="#" className="hover:text-red-500">Contact</a></li>
+          </ul>
+        </div>
+
+        {/* Download App Section */}
+        <div>
+          <h1 className="text-2xl font-bold mb-2">Download App</h1>
+          <p className="text-gray-400 mb-1">Save $3 with App New User Only</p>
+          <div className="flex items-center">
+            <div className="mr-1">
+              <Image
+                src="/images/scan.png"
+                alt="Scan QR Code"
+                width={90}
+                height={100}
+              />
+            </div>
+            <div>
+              <div className="flex mb-4">
+                <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer">
+                  <Image
+                    src="/images/googleplay.png"
+                    alt="Google Play"
+                    width={110}
+                    height={45}
+                  />
+                </a>
+              </div>
+              <div className="flex">
+                <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener noreferrer">
+                  <Image
+                    src="/images/appstore.png"
+                    alt="App Store"
+                    width={110}
+                    height={45}
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Social Media Icons */}
+          <div className="mt-6 flex gap-4">
+            <a href="#" className="text-gray-400 hover:text-white">
+              <FaFacebookF size={30} />
+            </a>
+            <a href="#" className="text-gray-400 hover:text-white">
+              <FaTwitter size={30} />
+            </a>
+            <a href="#" className="text-gray-400 hover:text-white">
+              <FaInstagram size={30} />
+            </a>
+            <a href="#" className="text-gray-400 hover:text-white">
+              <FaLinkedinIn size={30} />
+            </a>
+          </div>
+        </div>
       </div>
-    </footer>
+
+      {/* Footer Bottom */}
+      <div className="text-center text-gray-500 mt-8">
+        <p>&copy; 2024 Your Company. All rights reserved.</p>
+      </div>
+    </div>
   );
-};
+}
 
 export default Footer;

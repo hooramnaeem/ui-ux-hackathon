@@ -1,4 +1,6 @@
 // src/app/layout.tsx
+
+import { FaFontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";

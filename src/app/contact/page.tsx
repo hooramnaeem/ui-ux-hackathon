@@ -1,94 +1,148 @@
-"use client";
+"use client"
 
-import { useState } from "react";
-import { FaUser, FaEnvelope, FaCommentDots } from "react-icons/fa";
+import React, { useState } from 'react';
+import { FaPhone, FaEnvelope } from 'react-icons/fa'; // Import phone and envelope icons
 
-const ContactForm = () => {
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
-  const [submitted, setSubmitted] = useState(false);
+const Contact = () => {
+  // Form state
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    message: '',
+  });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  const [showAlert, setShowAlert] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  // Handle form submission
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true); // Simulate submission
+    setShowAlert(true);
+
+    // Clear the form fields
+    setFormData({
+      name: '',
+      phone: '',
+      email: '',
+      message: '',
+    });
+
+    // Hide the alert after 3 seconds
+    setTimeout(() => setShowAlert(false), 3000);
   };
 
   return (
-    <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-8 rounded-lg shadow-xl max-w-md mx-auto relative">
-      {/* Decorative Glow */}
-      <div className="absolute -top-6 -left-6 w-24 h-24 bg-green-500 blur-3xl rounded-full opacity-50"></div>
-      <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-blue-500 blur-3xl rounded-full opacity-50"></div>
+    <div className="min-h-screen bg-white py-16 px-4">
+      <div className="max-w-6xl mx-auto bg-white p-8 rounded-lg shadow-lg flex flex-col md:flex-row gap-8">
+        
+        {/* Left Section */}
+        <div className="flex flex-col w-full md:w-1/3 space-y-8 bg-white p-6 border border-gray-300 rounded-lg">
+          <div className="flex items-center space-x-4">
+            {/* Red Circle Background Icon */}
+            <div className="bg-red-500 text-white rounded-full p-3 transform -translate-y-2">
+              <FaPhone className="text-xl" />
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold">Call To Us</h3>
+              <p>We are available 24/7, 7 days a week.</p>
+              <p className="font-bold">Phone: +8801611122222</p>
+            </div>
+          </div>
+          
+          {/* Gray Line Divider */}
+          <div className="border-t border-gray-300 my-4"></div>
 
-      {/* Heading */}
-      <h2 className="text-4xl font-bold text-green-900 mb-6 text-center relative">
-        <span className="block text-shadow-lg shadow-green-900">Let's Connect!</span>
-      </h2>
-      <p className="text-center text-gray-700 mb-8">
-        I'm always excited to collaborate on exciting projects or share ideas. Feel free to reach out!
-      </p>
-
-      {/* Form */}
-      <form onSubmit={handleSubmit} className="space-y-6">
-        {/* Name Field */}
-        <div className="relative">
-          <FaUser className="absolute left-3 top-3 text-gray-500" />
-          <input
-            type="text"
-            name="name"
-            placeholder="Enter your name"
-            value={formData.name}
-            onChange={handleChange}
-            className="w-full pl-10 p-3 bg-white border border-gray-300 text-gray-900 rounded-full focus:outline-none focus:ring-2 focus:ring-green-700"
-            required
-          />
+          <div className="flex items-center space-x-4">
+            {/* Red Circle Background Icon */}
+            <div className="bg-red-500 text-white rounded-full p-3 transform -translate-y-2">
+              <FaEnvelope className="text-xl" />
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold">Write To Us</h3>
+              <p>Fill out our form, and we will contact you within 24 hours.</p>
+              <p className="font-bold">Emails:</p>
+              <p>customer@exclusive.com</p>
+              <p>support@exclusive.com</p>
+            </div>
+          </div>
         </div>
 
-        {/* Email Field */}
-        <div className="relative">
-          <FaEnvelope className="absolute left-3 top-3 text-gray-500" />
-          <input
-            type="email"
-            name="email"
-            placeholder="Enter your email"
-            value={formData.email}
-            onChange={handleChange}
-            className="w-full pl-10 p-3 bg-white border border-gray-300 text-gray-900 rounded-full focus:outline-none focus:ring-2 focus:ring-green-700"
-            required
-          />
-        </div>
+        {/* Right Section (Form) */}
+        <div className="flex flex-col w-full md:w-2/3 space-y-6 bg-white p-6 border border-gray-300 rounded-lg">
+          {/* Name, Phone, Email in one line */}
+          <div className="grid grid-cols-3 gap-6">
+            <div>
+              <label htmlFor="name" className="block text-sm font-medium mb-2">Your Name *</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                required
+                className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-0 focus:border-black"
+              />
+            </div>
+            <div>
+              <label htmlFor="phone" className="block text-sm font-medium mb-2">Your Phone *</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                value={formData.phone}
+                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                required
+                className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-0 focus:border-black"
+              />
+            </div>
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium mb-2">Your Email *</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                required
+                className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-0 focus:border-black"
+              />
+            </div>
+          </div>
 
-        {/* Message Field */}
-        <div className="relative">
-          <FaCommentDots className="absolute left-3 top-3 text-gray-500" />
-          <textarea
-            name="message"
-            placeholder="Enter your message"
-            value={formData.message}
-            onChange={handleChange}
-            className="w-full pl-10 p-3 bg-white border border-gray-300 text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-green-700"
-            rows={5}
-            required
-          />
-        </div>
+          {/* Message Section */}
+          <div>
+            <label htmlFor="message" className="block text-sm font-medium mb-2">Your Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows={4}
+              value={formData.message}
+              onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+              className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-0 focus:border-black"
+            ></textarea>
+          </div>
 
-        {/* Submit Button */}
-        <button
-          type="submit"
-          className="w-full bg-gradient-to-r from-green-900 to-green-500 text-white py-3 rounded-full font-bold hover:shadow-lg hover:shadow-green-500/50 hover:scale-105 transition duration-300"
-        >
-          Send Message
-        </button>
-        {submitted && (
-          <p className="text-green-900 mt-4 text-center">
-            Thank you for your message! I'll get back to you soon. 😊
-          </p>
-        )}
-      </form>
+          {/* Submit Button */}
+          <div className="flex justify-end">
+            <button
+              type="submit"
+              onClick={handleSubmit}
+              className="py-3 px-6 bg-red-500 text-white rounded-md hover:bg-red-600 focus:outline-none w-auto"
+            >
+              Send Message
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Thank You Alert */}
+      {showAlert && (
+        <div className="mt-4 p-2 text-center text-black">
+          <p>Thank you for your message! 😊</p>
+        </div>
+      )}
     </div>
   );
 };
 
-export default ContactForm;
+export default Contact;
