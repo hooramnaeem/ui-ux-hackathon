@@ -29,7 +29,7 @@ function Products() {
             },
             {
               id: 2,
-              img: "/images/bag.png",
+              img: "/images/Bag.png",
               name: "Gucci Duffle Bag",
               discountedPrice: "$760",
               originalPrice: "$960",

@@ -72,17 +72,22 @@ const Music = () => {
             Buy Now
           </button>
         </div>
+{/* Right Image */}
+<div className="w-full sm:w-[80%] flex justify-center sm:justify-end relative mb-9 sm:mb-9">
+  <Image
+    src="/images/music.png"
+    alt="Music"
+    width={600}
+    height={600}
+    className="rounded-lg object-cover sm:object-contain 
+               max-w-[90%] sm:max-w-[80%] h-auto 
+               absolute top-[-100px] sm:top-0 transform -translate-x-1/2 left-1/2"
+  />
+</div>
 
-        {/* Right Image */}
-        <div className="w-full sm:w-[90%] flex justify-center sm:justify-end top-[-100px] relative mb-0 sm:mb-0">
-          <Image
-            src="/images/music.png"
-            alt="Music"
-            width={600}  // Smaller size for mobile
-            height={600} // Smaller height for mobile
-            className="rounded-lg object-cover sm:object-contain absolute top-[100px] sm:top-0 left-1/2 transform -translate-x-1/2 sm:max-w-[80%] max-w-[100%]"
-          />
-        </div>
+
+
+
       </div>
     </section>
   );
