@@ -61,10 +61,10 @@ const Cart = () => {
         <table className="w-full border-collapse border border-gray-300">
           <thead>
             <tr className="bg-gray-100">
-              <th className="p-4 border text-[#1D3178]">Product</th>
-              <th className="p-4 border text-[#1D3178]">Price</th>
-              <th className="p-4 border text-[#1D3178]">Quantity</th>
-              <th className="p-4 border text-[#1D3178]">Total</th>
+              <th className="p-4 border text-[#1D3178] text-xs sm:text-base">Product</th>
+              <th className="p-4 border text-[#1D3178] text-xs sm:text-base">Price</th>
+              <th className="p-4 border text-[#1D3178] text-xs sm:text-base">Quantity</th>
+              <th className="p-4 border text-[#1D3178] text-xs sm:text-base">Total</th>
             </tr>
           </thead>
           <tbody>
@@ -79,13 +79,13 @@ const Cart = () => {
                     className="w-16 h-16 rounded-lg object-cover"
                   />
                   <div>
-                    <p className="font-semibold text-[#1D3178]">{item.name}</p>
-                    <p className="text-sm text-gray-500">
+                    <p className="font-semibold text-[#1D3178] text-xs sm:text-base">{item.name}</p>
+                    <p className="text-sm text-gray-500 text-xs sm:text-sm">
                       Color: {item.color}, Size: {item.size}
                     </p>
                   </div>
                 </td>
-                <td className="p-4 border text-[#1D3178]">${item.price.toFixed(2)}</td>
+                <td className="p-4 border text-[#1D3178] text-xs sm:text-base">${item.price.toFixed(2)}</td>
                 <td className="p-4 border">
                   <input
                     type="number"
@@ -93,11 +93,11 @@ const Cart = () => {
                     onChange={(e) =>
                       updateQuantity(item.id, Number(e.target.value))
                     }
-                    className="w-16 px-2 py-1 border rounded-md"
+                    className="w-16 px-2 py-1 border rounded-md text-xs sm:text-sm"
                     min="1"
                   />
                 </td>
-                <td className="p-4 border text-[#1D3178]">
+                <td className="p-4 border text-[#1D3178] text-xs sm:text-base">
                   ${(item.price * item.quantity).toFixed(2)}
                 </td>
               </tr>
@@ -105,10 +105,10 @@ const Cart = () => {
           </tbody>
         </table>
         <div className="flex justify-between mt-4">
-          <button className="px-4 py-2 bg-[#FB2E86] text-white rounded-md">
+          <button className="px-4 py-2 bg-[#FB2E86] text-white rounded-md text-xs sm:text-sm">
             Update Cart
           </button>
-          <button className="px-4 py-2 bg-[#FB2E86] text-white rounded-md">
+          <button className="px-4 py-2 bg-[#FB2E86] text-white rounded-md text-xs sm:text-sm">
             Clear Cart
           </button>
         </div>
@@ -117,36 +117,36 @@ const Cart = () => {
       {/* Cart Totals */}
       <div className="p-6 bg-gray-50 rounded-md shadow-md flex flex-col justify-between">
         <div>
-          <h2 className="text-xl font-bold mb-4 text-[#1D3178]">Cart Totals</h2>
-          <p className="flex justify-between mb-2 text-[#1D3178]">
+          <h2 className="text-xl font-bold mb-4 text-[#1D3178] text-xs sm:text-xl">Cart Totals</h2>
+          <p className="flex justify-between mb-2 text-[#1D3178] text-xs sm:text-sm">
             <span>Subtotal:</span> <span>${calculateTotal().toFixed(2)}</span>
           </p>
-          <p className="flex justify-between mb-4 text-[#1D3178]">
+          <p className="flex justify-between mb-4 text-[#1D3178] text-xs sm:text-sm">
             <span>Totals:</span> <span>${(calculateTotal() + 15).toFixed(2)}</span>
           </p>
-          <button className="w-full py-2 bg-[#19D16F] text-white rounded-md">
+          <button className="w-full py-2 bg-[#19D16F] text-white rounded-md text-xs sm:text-sm">
             Proceed To Checkout
           </button>
         </div>
         {/* Shipping Calculator */}
         <div className="p-6 bg-gray-50 rounded-md shadow-md">
-          <h2 className="text-xl font-bold mb-4 text-[#1D3178]">Calculate Shipping</h2>
+          <h2 className="text-xl font-bold mb-4 text-[#1D3178] text-xs sm:text-xl">Calculate Shipping</h2>
           <input
             type="text"
             placeholder="Bangladesh"
-            className="w-full mb-3 px-3 py-2 border rounded-md"
+            className="w-full mb-3 px-3 py-2 border rounded-md text-xs sm:text-sm"
           />
           <input
             type="text"
             placeholder="Mirpur, Dhaka - 1200"
-            className="w-full mb-3 px-3 py-2 border rounded-md"
+            className="w-full mb-3 px-3 py-2 border rounded-md text-xs sm:text-sm"
           />
           <input
             type="text"
             placeholder="Postal Code"
-            className="w-full mb-4 px-3 py-2 border rounded-md"
+            className="w-full mb-4 px-3 py-2 border rounded-md text-xs sm:text-sm"
           />
-          <button className="w-full py-2 bg-[#FB2E86] text-white rounded-md">
+          <button className="w-full py-2 bg-[#FB2E86] text-white rounded-md text-xs sm:text-sm">
             Calculate Shipping
           </button>
         </div>

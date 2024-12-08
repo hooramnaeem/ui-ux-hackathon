@@ -57,7 +57,7 @@ function TrendingProducts() {
             alt="Voucher Image"
             width={200}
             height={200}
-            className="absolute bottom-2 right-2 object-contain"
+            className="absolute bottom-2 right-0 object-contain"
           />
         </div>
 
