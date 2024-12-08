@@ -2,28 +2,31 @@
 
 import Header from "./components/Header";
 import Hero from "./components/Hero";
-import Sale from "./components/Sale";
-import Products from "./components/Products";
 import Footer from "./components/Footer";
-import Category from "./components/Category";
-import Music from "./components/Music";
-import Explore from "./components/Explore";
-import Arrival from "./components/Arrival";
-import Feature from "./components/FeatureSection"
-
+import TopCategories from "./components/TopCategories";
+import LatestProducts from "./components/LatestProducts";
+import Feature from "./components/FeatureProduct";
+import Offers from "./components/Offers";
+import Unique from "./components/Unique";
+import TrendingProducts from "./components/TrendingProducts";
+import Discount from "./components/Discount";
+import BlogSection from "./components/BlogSection";
+import Newslater from "./components/Newslater";
 
 function Homepage(){
   return(
     <div>
       <Header />
       <Hero />
-      <Sale />
-      <Category />
-      <Products />
-      <Music />
-      <Explore />
-      <Arrival />
       <Feature />
+      <LatestProducts />
+      <Offers />
+      <Unique />
+      <TrendingProducts />
+      <Discount />
+      <TopCategories />
+      <Newslater />
+      <BlogSection />
       <Footer />
     </div>
   )

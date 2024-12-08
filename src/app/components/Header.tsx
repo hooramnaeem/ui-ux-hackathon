@@ -1,10 +1,20 @@
 'use client';
 
 import Link from "next/link";
-import { MagnifyingGlassIcon, HeartIcon, ShoppingCartIcon } from "@heroicons/react/24/outline";
-import TopBar from "./TopBar"; // Import the TopBar
+import { useState } from "react";
+import { 
+  MagnifyingGlassIcon, 
+  ShoppingCartIcon, 
+  HeartIcon, 
+  Bars3Icon, 
+  XMarkIcon 
+} from "@heroicons/react/24/outline";
+import TopBar from "./TopBar";
 
 function Header() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isHomeDropdownOpen, setIsHomeDropdownOpen] = useState(false);
+
   return (
     <>
       {/* Top Bar */}
@@ -12,115 +22,181 @@ function Header() {
 
       {/* Main Header */}
       <div className="w-full h-[80px] flex justify-center items-center border-b-2">
-        <div className="w-[90%] max-w-[1200px] h-full flex justify-between items-center">
-          {/* Left Side */}
-          <div>
+        <div className="w-full max-w-[1200px] h-full flex justify-between items-center px-10">
+          {/* Left Section: Logo and Search Bar */}
+          <div className="flex items-center gap-8">
             {/* Logo */}
-            <h1 className="text-3xl font-bold">Exclusive</h1>
-          </div>
-
-          {/* Right Side */}
-          <div className="flex items-center gap-x-2">
-            {/* Navigation Links */}
-            <ul className="hidden md:flex gap-x-4">
-              <li>
-                <Link className="hover:underline" href={"/"}>
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link className="hover:underline" href={"/about"}>
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link className="hover:underline" href={"/contact"}>
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <Link className="hover:underline" href={"/signup"}>
-                  Sign Up
-                </Link>
-              </li>
-            </ul>
+            <h1 className="text-3xl font-bold">Hekto</h1>
 
             {/* Search Bar */}
-            <div className="hidden md:flex items-center border rounded-md overflow-hidden bg-gray-100">
+            <div className="hidden sm:flex items-center border rounded-md overflow-hidden bg-gray-100">
               <input
                 type="text"
                 placeholder="What are you looking for?"
                 className="w-60 px-3 py-2 text-sm outline-none bg-transparent"
               />
-              <button className="p-2 text-black hover:text-gray-500 transition-colors">
+              <button className="p-2 bg-[#FB2E86] text-white hover:bg-[#F94C9B] transition-colors">
                 <MagnifyingGlassIcon className="w-5 h-5" />
               </button>
             </div>
-
-            {/* Wishlist and Cart Buttons */}
-            <div className="flex items-center gap-x-2">
-              {/* Wishlist Icon */}
-              <button
-                className="hover:text-gray-500 transition-colors relative"
-                aria-label="Wishlist"
-              >
-                <HeartIcon className="w-6 h-6" />
-                <div className="absolute top-[-5px] right-[-5px] text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                </div>
-              </button>
-
-              {/* Cart Icon */}
-              <button
-                className="hover:text-gray-500 transition-colors relative"
-                aria-label="Cart"
-              >
-                <ShoppingCartIcon className="w-6 h-6" />
-                <div className="absolute top-[-5px] right-[-5px]  text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                </div>
-              </button>
-            </div>
           </div>
-        </div>
 
-        {/* Mobile Search and Navigation */}
-        <div className="w-full md:hidden flex flex-col px-5 py-2 gap-y-2">
-          {/* Search Bar */}
-          <div className="flex items-center border rounded-md overflow-hidden bg-gray-100">
+          {/* Center Section: Navigation Links */}
+          <div className="hidden sm:flex items-center gap-x-8">
+            <ul className="flex gap-x-8 items-center">
+              <li className="relative">
+                {/* Home Dropdown */}
+                <button
+                  className="hover:text-[#FB2E86] transition-colors"
+                  onClick={() => setIsHomeDropdownOpen(!isHomeDropdownOpen)}
+                >
+                  Home
+                </button>
+                {isHomeDropdownOpen && (
+                  <ul className="absolute top-full mt-2 bg-white shadow-md rounded-md text-black text-sm">
+                    <li className="px-4 py-2 hover:bg-gray-100">
+                      <Link href="/about-us">About Us</Link>
+                    </li>
+                    <li className="px-4 py-2 hover:bg-gray-100">
+                      <Link href="/contact-us">Contact Us</Link>
+                    </li>
+                    <li className="px-4 py-2 hover:bg-gray-100">
+                      <Link href="/faq">FAQ</Link>
+                    </li>
+                  </ul>
+                )}
+              </li>
+              <li>
+                <Link className="hover:text-[#FB2E86] transition-colors" href="/pages">
+                  Pages
+                </Link>
+              </li>
+              <li>
+                <Link className="hover:text-[#FB2E86] transition-colors" href="/products">
+                  Products
+                </Link>
+              </li>
+              <li>
+                <Link className="hover:text-[#FB2E86] transition-colors" href="/blog">
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link className="hover:text-[#FB2E86] transition-colors" href="/shop">
+                  Shop
+                </Link>
+              </li>
+              <li>
+                <Link className="hover:text-[#FB2E86] transition-colors" href="/contact">
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Right Section: Icons */}
+          <div className="hidden sm:flex items-center gap-x-6">
+            <Link href="/cart" className="hover:text-[#FB2E86] transition-colors flex items-center gap-1">
+              <ShoppingCartIcon className="w-5 h-5" />
+              <span>Cart</span>
+            </Link>
+            <Link href="/wishlist" className="hover:text-[#FB2E86] transition-colors flex items-center gap-1">
+              <HeartIcon className="w-5 h-5" />
+              <span>Wishlist</span>
+            </Link>
+          </div>
+
+          {/* Mobile Menu Toggle */}
+          <button
+            className="sm:hidden flex items-center"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? (
+              <XMarkIcon className="w-6 h-6 text-black" />
+            ) : (
+              <Bars3Icon className="w-6 h-6 text-black" />
+            )}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="w-full bg-gray-50 shadow-md sm:hidden">
+          <ul className="flex flex-col px-4 py-2">
+            <li className="relative">
+              <button
+                className="block py-2 hover:text-[#FB2E86] w-full text-left"
+                onClick={() => setIsHomeDropdownOpen(!isHomeDropdownOpen)}
+              >
+                Home
+              </button>
+              {isHomeDropdownOpen && (
+                <ul className="mt-2 bg-white shadow-md rounded-md text-black text-sm">
+                  <li className="px-4 py-2 hover:bg-gray-100">
+                    <Link href="/about-us">About Us</Link>
+                  </li>
+                  <li className="px-4 py-2 hover:bg-gray-100">
+                    <Link href="/contact-us">Contact Us</Link>
+                  </li>
+                  <li className="px-4 py-2 hover:bg-gray-100">
+                    <Link href="/faq">FAQ</Link>
+                  </li>
+                </ul>
+              )}
+            </li>
+            <li>
+              <Link className="block py-2 hover:text-[#FB2E86]" href="/pages">
+                Pages
+              </Link>
+            </li>
+            <li>
+              <Link className="block py-2 hover:text-[#FB2E86]" href="/products">
+                Products
+              </Link>
+            </li>
+            <li>
+              <Link className="block py-2 hover:text-[#FB2E86]" href="/blog">
+                Blog
+              </Link>
+            </li>
+            <li>
+              <Link className="block py-2 hover:text-[#FB2E86]" href="/shop">
+                Shop
+              </Link>
+            </li>
+            <li>
+              <Link className="block py-2 hover:text-[#FB2E86]" href="/account">
+                My Account
+              </Link>
+            </li>
+          </ul>
+
+          {/* Mobile Search Bar */}
+          <div className="flex items-center border rounded-md overflow-hidden bg-gray-100 px-4 py-2 mx-4 mt-4">
             <input
               type="text"
               placeholder="Search"
               className="w-full px-3 py-2 text-sm outline-none bg-transparent"
             />
-            <button className="p-2 text-black hover:text-gray-500 transition-colors">
+            <button className="p-2 bg-[#FB2E86] text-white hover:bg-[#F94C9B] transition-colors">
               <MagnifyingGlassIcon className="w-5 h-5" />
             </button>
           </div>
 
-          {/* Mobile Navigation Links */}
-          <ul className="flex justify-around text-sm">
-            <li>
-              <Link className="hover:underline" href={"/"}>
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link className="hover:underline" href={"/about"}>
-                About
-              </Link>
-            </li>
-            <li>
-              <Link className="hover:underline" href={"/contact"}>
-                Contact
-              </Link>
-            </li>
-            <li>
-              <Link className="hover:underline" href={"/signup"}>
-                Sign Up
-              </Link>
-            </li>
-          </ul>
+          {/* Mobile Cart and Wishlist */}
+          <div className="flex justify-around px-4 py-2 border-t">
+          <Link href="/cart" className="flex items-center gap-1 text-sm hover:text-[#FB2E86]">
+      <ShoppingCartIcon className="w-5 h-5" />
+      <span>Cart</span>
+    </Link>
+            <Link href="/wishlist" className="flex items-center gap-1 text-sm hover:text-[#FB2E86]">
+              <HeartIcon className="w-5 h-5" />
+              <span>Wishlist</span>
+            </Link>
+          </div>
         </div>
-      </div>
+      )}
     </>
   );
 }

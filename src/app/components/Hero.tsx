@@ -1,60 +1,76 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faApple } from "@fortawesome/free-brands-svg-icons";
-import Image from "next/image"; 
-import { ChevronRightIcon } from "@heroicons/react/24/outline";
+'use client';
+
+import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 function Hero() {
+  const router = useRouter();
+
   return (
-    <div className="w-full flex justify-center mt-8">
-      <div className="bg-black w-full sm:w-[80%] flex flex-col sm:flex-row justify-between items-center sm:items-stretch">
-        {/* Left Side */}
-        <div className="bg-white w-full sm:w-[30%] p-4">
-          <ul className="space-y-2">
-            <li className="flex items-center justify-between sm:gap-2 hover:underline">
-              <span>Woman's Fashion</span>
-              <ChevronRightIcon className="w-4 h-4 hidden sm:inline" />
-            </li>
-            <li className="flex items-center justify-between sm:gap-2 hover:underline">
-              <span>Men's Fashion</span>
-              <ChevronRightIcon className="w-4 h-4 hidden sm:inline" />
-            </li>
-            <li className="hover:underline">Electronics</li>
-            <li className="hover:underline">Home & Lifestyle</li>
-            <li className="hover:underline">Medicine</li>
-            <li className="hover:underline">Sports & Outdoor</li>
-            <li className="hover:underline">Baby's & Toys</li>
-            <li className="hover:underline">Groceries & Pets</li>
-            <li className="hover:underline">Health & Beauty</li>
-          </ul>
+    <div className="relative w-full bg-[#F3F3F3] overflow-hidden flex flex-col md:flex-row items-center justify-between">
+
+      {/* Left Section for Mobile & Desktop */}
+      <div className="w-full md:w-1/2 h-full flex flex-col md:flex-row items-center justify-start pl-6 md:pl-16 relative">
+
+        {/* Bulb Image */}
+<div className="relative md:absolute top-[-30px] left-[-30px] md:left-[-100px]">
+  <Image src="/images/bulb.png" alt="Bulb" width={300} height={300} className="object-contain" />
+</div>
+
+
+        {/* Text Content - Aligning next to the bulb */}
+        <div className="relative mt-6 md:mt-0 md:ml-6 text-center md:text-left">
+          {/* Pink Text */}
+          <p className="text-[#FB2E86] text-lg md:text-xl font-normal mb-2">
+            Best Furniture For Your Castle...
+          </p>
+
+          {/* Bold Heading */}
+          <h1 className="text-2xl md:text-4xl font-bold text-black leading-tight mb-4">
+            New Furniture Collection Trends in 2020
+          </h1>
+
+          {/* Description */}
+          <p className="text-sm md:text-lg text-gray-600 mb-6">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in
+            phasellus non in justo.
+          </p>
+
+          {/* Shop Now Button */}
+          <button
+            onClick={() => router.push('/grid-product')}
+            className="bg-[#FB2E86] text-white py-2 px-6 hover:bg-pink-700 transition-colors"
+          >
+            Shop Now
+          </button>
         </div>
 
-        {/* Center Section */}
-        <div className="text-white text-center sm:text-left mt-4 sm:mt-16 sm:ml-8">
-          <div className="flex justify-center sm:justify-start items-center">
-            <FontAwesomeIcon icon={faApple} className="w-[30px]" />
-            <span className="ml-4 text-lg sm:text-xl">iPhone 14 Series</span>
-          </div>
-          <div className="w-[90%] sm:w-[200px] mx-auto sm:mx-0 mt-4">
-            <h1 className="text-2xl sm:text-3xl font-sans font-bold">
-              Upto 10% off Voucher
-            </h1>
-            <button className="font-bold underline underline-offset-8 mt-2 sm:ml-5 group transition-transform duration-300 hover:translate-x-2">
-              Shop Now →
-            </button>
-          </div>
+      </div>
+
+      {/* Right Section (Desktop, Mobile - Scrollable) */}
+      <div className="w-full md:w-1/2 h-full relative flex flex-col items-center justify-start">
+
+        {/* Pink Background Image */}
+        <div
+          className="absolute top-[60px] w-[380px] md:w-[450px] h-[380px] md:h-[450px] bg-cover bg-center z-0"
+          style={{ backgroundImage: 'url(/images/pink.png)' }}
+        ></div>
+
+        {/* Sofa Image */}
+        <div className="relative z-10 mt-[80px] mb-[20px]">
+          <Image src="/images/sofa.png" alt="Sofa" width={350} height={250} className="object-contain" />
         </div>
 
-        {/* Right Side */}
-        <div className="mt-4 sm:mt-0">
-          <Image
-            src={"/images/hero.png"}
-            width={350}
-            height={200}
-            alt="Heroimage"
-            className="mx-auto sm:mx-0"
-          />
+        {/* Blue Discount Badge */}
+        <div
+          className="absolute top-[40px] right-[75px] bg-cover bg-center w-[80px] h-[80px] flex flex-col justify-center items-center z-20"
+          style={{ backgroundImage: 'url(/images/discount.png)' }}
+        >
+          <span className="text-xl font-bold text-white">50%</span>
+          <span className="text-sm font-semibold text-white">OFF</span>
         </div>
       </div>
+
     </div>
   );
 }

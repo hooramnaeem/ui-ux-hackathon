@@ -1,154 +1,110 @@
 'use client';
-import React, { useState } from 'react'; // Import useState for managing the alert
-import Image from 'next/image'; 
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaPaperPlane } from 'react-icons/fa';
+
+import React, { useState } from 'react';
+import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
 
 function Footer() {
-  const [email, setEmail] = useState(""); // State for email input
-  const [message, setMessage] = useState(""); // State for the success/error message
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
   const handleSendEmail = () => {
-    if (!email.includes("@")) { // Check if the email contains '@'
-      setMessage("❌ Please enter a valid email address with '@'.");
+    if (!email.includes("@")) {
+      setMessage("❌ Please enter a valid email address.");
     } else {
-      setMessage("✅ Your email has been sent!");
+      setMessage("✅ You have successfully subscribed!");
     }
-    setTimeout(() => setMessage(""), 3000); // Clear the message after 3 seconds
+    setTimeout(() => setMessage(""), 3000);
   };
 
   return (
-    <div className="bg-black text-white py-16">
-      <div className="w-[80%] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
-        {/* Exclusive Section */}
+    <div className="bg-gray-100 py-16 text-gray-600">
+      <div className="w-[90%] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        {/* First Section */}
         <div>
-          <h1 className="text-2xl font-bold mb-4">Exclusive</h1>
-          <ul>
-            <li className="mb-2 font-semibold">
-              <a href="#" className="hover:text-red-500">Subscribe</a>
-            </li>
-            <li className="mb-4 text-gray-400">Get 10% off your first order</li>
-            <div className="flex items-center border border-white rounded-md overflow-hidden">
-              <input
-                type="email"
-                value={email} // Bind the email state to the input
-                onChange={(e) => setEmail(e.target.value)} // Update state on input change
-                placeholder="Enter your email"
-                className="w-full px-3 py-2 text-sm outline-none bg-black text-white"
-              />
-              <button
-                onClick={handleSendEmail} // Call the function when clicked
-                className="p-2 bg-black hover:bg-gray-800 transition-colors"
-              >
-                <FaPaperPlane className="text-white w-5 h-5" />
-              </button>
-            </div>
-            {/* Message Alert */}
-            {message && (
-              <p className="mt-2 text-sm flex items-center gap-2">
-                {message.startsWith("✅") ? (
-                  <span className="text-green-500">{message}</span>
-                ) : (
-                  <span className="text-red-500">{message}</span>
-                )}
-              </p>
-            )}
-          </ul>
-        </div>
-
-        {/* Support Section */}
-        <div>
-          <h1 className="text-2xl font-bold mb-4">Support</h1>
-          <ul>
-            <li className="mb-2">111 Bijoy Sarani, Dhaka, DH 1515, Bangladesh</li>
-            <li className="mb-2">exclusive@gmail.com</li>
-            <li className="mb-4">+88015-88888-9999</li>
-          </ul>
-        </div>
-
-        {/* Account Section */}
-        <div>
-          <h1 className="text-2xl font-bold mb-4">Account</h1>
-          <ul>
-            <li className="mb-2"><a href="#" className="hover:text-red-500">My Account</a></li>
-            <li className="mb-2"><a href="#" className="hover:text-red-500">Login / Register</a></li>
-            <li className="mb-2"><a href="#" className="hover:text-red-500">Cart</a></li>
-            <li className="mb-2"><a href="#" className="hover:text-red-500">Wishlist</a></li>
-            <li className="mb-4"><a href="#" className="hover:text-red-500">Shop</a></li>
-          </ul>
-        </div>
-
-        {/* Quick Links Section */}
-        <div>
-          <h1 className="text-2xl font-bold mb-4">Quick Links</h1>
-          <ul>
-            <li className="mb-2"><a href="#" className="hover:text-red-500">Privacy Policy</a></li>
-            <li className="mb-2"><a href="#" className="hover:text-red-500">Terms of Use</a></li>
-            <li className="mb-2"><a href="#" className="hover:text-red-500">FAQ</a></li>
-            <li className="mb-4"><a href="#" className="hover:text-red-500">Contact</a></li>
-          </ul>
-        </div>
-
-        {/* Download App Section */}
-        <div>
-          <h1 className="text-2xl font-bold mb-2">Download App</h1>
-          <p className="text-gray-400 mb-1">Save $3 with App New User Only</p>
-          <div className="flex items-center">
-            <div className="mr-1">
-              <Image
-                src="/images/scan.png"
-                alt="Scan QR Code"
-                width={90}
-                height={100}
-              />
-            </div>
-            <div>
-              <div className="flex mb-4">
-                <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer">
-                  <Image
-                    src="/images/googleplay.png"
-                    alt="Google Play"
-                    width={110}
-                    height={45}
-                  />
-                </a>
-              </div>
-              <div className="flex">
-                <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener noreferrer">
-                  <Image
-                    src="/images/appstore.png"
-                    alt="App Store"
-                    width={110}
-                    height={45}
-                  />
-                </a>
-              </div>
-            </div>
+          <h1 className="text-[#151875] text-3xl font-bold mb-4">Hekto</h1>
+          <div className="flex items-center border border-gray-300 rounded-md overflow-hidden mb-4">
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Enter your email address"
+              className="w-full px-3 py-2 text-sm outline-none"
+            />
+            <button
+              onClick={handleSendEmail}
+              className="bg-[#FB2E86] text-white px-4 py-2 text-sm font-medium hover:bg-pink-700 transition-colors"
+            >
+              Sign Up
+            </button>
           </div>
+          {message && (
+            <p className={`mt-2 text-sm ${message.startsWith("✅") ? "text-green-500" : "text-red-500"}`}>
+              {message}
+            </p>
+          )}
+          <p className="mt-4 text-gray-500">Contact Info</p>
+          <p>17 Princess Road, London, Greater London NW1 8JR, UK</p>
+        </div>
 
-          {/* Social Media Icons */}
-          <div className="mt-6 flex gap-4">
-            <a href="#" className="text-gray-400 hover:text-white">
-              <FaFacebookF size={30} />
-            </a>
-            <a href="#" className="text-gray-400 hover:text-white">
-              <FaTwitter size={30} />
-            </a>
-            <a href="#" className="text-gray-400 hover:text-white">
-              <FaInstagram size={30} />
-            </a>
-            <a href="#" className="text-gray-400 hover:text-white">
-              <FaLinkedinIn size={30} />
-            </a>
-          </div>
+        {/* Second Section */}
+        <div>
+          <h2 className="text-[#151875] text-xl font-semibold mb-4">Categories</h2>
+          <ul className="space-y-2">
+            <li>Laptops & Computers</li>
+            <li>Cameras & Photography</li>
+            <li>Smart Phones & Tablets</li>
+            <li>Video Games & Consoles</li>
+            <li>Waterproof Headphones</li>
+          </ul>
+        </div>
+
+        {/* Third Section */}
+        <div>
+          <h2 className="text-[#151875] text-xl font-semibold mb-4">Customer Care</h2>
+          <ul className="space-y-2">
+            <li>My Account</li>
+            <li>Discount</li>
+            <li>Returns</li>
+            <li>Order History</li>
+            <li>Order Tracking</li>
+          </ul>
+        </div>
+
+        {/* Fourth Section */}
+        <div>
+          <h2 className="text-[#151875] text-xl font-semibold mb-4">Pages</h2>
+          <ul className="space-y-2">
+            <li>Blog</li>
+            <li>Browse the Shop</li>
+            <li>Category</li>
+            <li>Pre-Built Pages</li>
+            <li>Visual Composer Elements</li>
+            <li>WooCommerce Pages</li>
+          </ul>
         </div>
       </div>
 
       {/* Footer Bottom */}
-      <div className="text-center text-gray-500 mt-8">
-        <p>&copy; 2024 Muqaddas Fatima. All rights reserved.</p>
+      <div className="mt-12 border-t border-gray-200 pt-8">
+        <div className="flex justify-between items-center w-[90%] mx-auto">
+          <p className="text-gray-500">&copy; Webecy - All Rights Reserved. Muqaddas Fatima</p>
+          <div className="flex space-x-4">
+            <a href="https://github.com/MuqaddasFatima24" className="w-8 h-8 rounded-full bg-[#151875] flex items-center justify-center text-white hover:bg-blue-700">
+              <FaFacebookF />
+            </a>
+            <a href="@muqadas_fatima25" className="w-8 h-8 rounded-full bg-[#151875] flex items-center justify-center text-white hover:bg-blue-700">
+              <FaTwitter />
+            </a>
+            <a href="@muqadas_fatima25" className="w-8 h-8 rounded-full bg-[#151875] flex items-center justify-center text-white hover:bg-blue-700">
+              <FaInstagram />
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   );
 }
 
 export default Footer;
+
+
