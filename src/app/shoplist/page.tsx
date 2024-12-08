@@ -1,9 +1,33 @@
 import Image from "next/image";
 import Link from "next/link";
 
+const shoplist = [
+  {
+    id: 1,
+    name: "Product 1",
+    image: "/images/product1.png",
+    price: "$120.00",
+    oldPrice: "$150.00",
+    description: "This is a brief description of Product 1.",
+    rating: 4,
+    colors: ["bg-red-500", "bg-blue-500", "bg-green-500"],
+  },
+  {
+    id: 2,
+    name: "Product 2",
+    image: "/images/product2.png",
+    price: "$99.00",
+    oldPrice: "$130.00",
+    description: "This is a brief description of Product 2.",
+    rating: 5,
+    colors: ["bg-yellow-500", "bg-purple-500", "bg-gray-500"],
+  },
+];
+
 const ShopList = () => {
   return (
     <div className="font-sans text-[#151875]">
+      {/* Header Section */}
       <div className="py-28 px-8">
         <h1 className="text-4xl font-bold">Shop List</h1>
         <div className="flex items-center gap-2">
@@ -13,6 +37,7 @@ const ShopList = () => {
         </div>
       </div>
 
+      {/* Filter and Sorting Section */}
       <div className="py-4 flex flex-col lg:flex-row justify-between px-8">
         <div>
           <h1 className="text-2xl font-semibold font-[Josefin Sans] mb-2">
@@ -25,7 +50,10 @@ const ShopList = () => {
         <div className="flex flex-col sm:flex-row sm:items-center gap-4">
           {/* Per Page */}
           <div className="flex items-center gap-2">
-            <label htmlFor="perPage" className="text-sm font-medium text-gray-700">
+            <label
+              htmlFor="perPage"
+              className="text-sm font-medium text-gray-700"
+            >
               Per Page:
             </label>
             <input
@@ -37,7 +65,10 @@ const ShopList = () => {
 
           {/* Sort By */}
           <div className="flex items-center gap-2">
-            <label htmlFor="sortBy" className="text-sm font-medium text-gray-700">
+            <label
+              htmlFor="sortBy"
+              className="text-sm font-medium text-gray-700"
+            >
               Sort By:
             </label>
             <select
@@ -64,6 +95,7 @@ const ShopList = () => {
         </div>
       </div>
 
+      {/* Product List */}
       <div className="p-8">
         <div className="space-y-6">
           {shoplist.map((product) => (
@@ -84,7 +116,7 @@ const ShopList = () => {
 
               {/* Product Details */}
               <div className="lg:w-2/3 lg:ml-6 mt-4 lg:mt-0">
-                <div className="w-96 flex justify-between items-center">
+                <div className="w-full flex justify-between items-center">
                   <h3 className="text-xl font-semibold">{product.name}</h3>
                   {/* Color Options */}
                   <div className="mt-2 flex gap-1">
@@ -100,7 +132,9 @@ const ShopList = () => {
                 {/* Price and Old Price */}
                 <div className="mt-4 flex items-center space-x-2">
                   <span className="text-lg font-bold">{product.price}</span>
-                  <span className="text-red-500 line-through">{product.oldPrice}</span>
+                  <span className="text-red-500 line-through">
+                    {product.oldPrice}
+                  </span>
                 </div>
                 <p className="mt-2 text-gray-600 w-96">{product.description}</p>
 
@@ -110,7 +144,9 @@ const ShopList = () => {
                     <span
                       key={index}
                       className={`${
-                        index < product.rating ? "text-yellow-400" : "text-gray-300"
+                        index < product.rating
+                          ? "text-yellow-400"
+                          : "text-gray-300"
                       } text-lg`}
                     >
                       ★
