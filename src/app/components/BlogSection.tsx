@@ -1,5 +1,6 @@
 'use client';
 import Image from 'next/image';
+import Link from "next/link";
 
 function BlogSection() {
   const blogs = [
@@ -10,7 +11,7 @@ function BlogSection() {
       date: "21 August, 2020",
       title: "Top Essential Trends in 2020",
       description: "More off this less hello samlande lied much over tightly circa horse taped mightly.",
-      titleColor: "#151875", // Blue color for title
+      titleColor: "#151875", 
     },
     {
       id: 2,
@@ -19,7 +20,7 @@ function BlogSection() {
       date: "21 August, 2020",
       title: "Top Essential Trends in 2020",
       description: "More off this less hello samlande lied much over tightly circa horse taped mightly.",
-      titleColor: "#FB2E86", // Pink color for title and "Read More"
+      titleColor: "#FB2E86",
     },
     {
       id: 3,
@@ -28,7 +29,7 @@ function BlogSection() {
       date: "21 August, 2020",
       title: "Top Essential Trends in 2020",
       description: "More off this less hello samlande lied much over tightly circa horse taped mightly.",
-      titleColor: "#151875", // Blue color for title
+      titleColor: "#151875", 
     },
   ];
 
@@ -71,12 +72,14 @@ function BlogSection() {
             <p className="text-gray-600 mt-2">{blog.description}</p>
 
             {/* Read More */}
+            <Link href="/blog">
             <button
               className="underline text-sm font-medium mt-4"
               style={{ color: blog.titleColor }}
             >
               Read More
             </button>
+            </Link>
           </div>
         ))}
       </div>

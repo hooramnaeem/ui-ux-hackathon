@@ -13,7 +13,7 @@ import TopBar from "./TopBar";
 
 function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isHomeDropdownOpen, setIsHomeDropdownOpen] = useState(false);
+  const [isPagesDropdownOpen, setIsPagesDropdownOpen] = useState(false);
 
   return (
     <>
@@ -45,15 +45,17 @@ function Header() {
           <div className="hidden sm:flex items-center gap-x-8">
             <ul className="flex gap-x-8 items-center">
               <li className="relative">
-                {/* Home Dropdown */}
                 <button
                   className="hover:text-[#FB2E86] transition-colors"
-                  onClick={() => setIsHomeDropdownOpen(!isHomeDropdownOpen)}
+                  onClick={() => setIsPagesDropdownOpen(!isPagesDropdownOpen)} // Toggle the Pages menu
                 >
-                  Home
+                  Pages
                 </button>
-                {isHomeDropdownOpen && (
+                {isPagesDropdownOpen && (
                   <ul className="absolute top-full mt-2 bg-white shadow-md rounded-md text-black text-sm">
+                    <li className="px-4 py-2 hover:bg-gray-100">
+                      <Link href="/cart">Cart</Link>
+                    </li>
                     <li className="px-4 py-2 hover:bg-gray-100">
                       <Link href="/about-us">About Us</Link>
                     </li>
@@ -65,11 +67,6 @@ function Header() {
                     </li>
                   </ul>
                 )}
-              </li>
-              <li>
-                <Link className="hover:text-[#FB2E86] transition-colors" href="/pages">
-                  Pages
-                </Link>
               </li>
               <li>
                 <Link className="hover:text-[#FB2E86] transition-colors" href="/products">
@@ -87,7 +84,7 @@ function Header() {
                 </Link>
               </li>
               <li>
-                <Link className="hover:text-[#FB2E86] transition-colors" href="/contact">
+                <Link className="hover:text-[#FB2E86] transition-colors" href="/contact-us">
                   Contact
                 </Link>
               </li>
@@ -122,36 +119,35 @@ function Header() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="w-full bg-gray-50 shadow-md sm:hidden">
-          <ul className="flex flex-col px-4 py-2">
-            <li className="relative">
-              <button
-                className="block py-2 hover:text-[#FB2E86] w-full text-left"
-                onClick={() => setIsHomeDropdownOpen(!isHomeDropdownOpen)}
-              >
-                Home
-              </button>
-              {isHomeDropdownOpen && (
-                <ul className="mt-2 bg-white shadow-md rounded-md text-black text-sm">
-                  <li className="px-4 py-2 hover:bg-gray-100">
-                    <Link href="/about-us">About Us</Link>
-                  </li>
-                  <li className="px-4 py-2 hover:bg-gray-100">
-                    <Link href="/contact-us">Contact Us</Link>
-                  </li>
-                  <li className="px-4 py-2 hover:bg-gray-100">
-                    <Link href="/faq">FAQ</Link>
-                  </li>
-                </ul>
-              )}
-            </li>
+        <div className="sm:hidden flex flex-col items-center px-4 py-2 border-t">
+          {/* Mobile Pages Dropdown */}
+          <button
+            className="hover:text-[#FB2E86] transition-colors"
+            onClick={() => setIsPagesDropdownOpen(!isPagesDropdownOpen)}
+          >
+            Pages
+          </button>
+          {isPagesDropdownOpen && (
+            <ul className="w-full text-center bg-white shadow-md rounded-md text-black text-sm">
+              <li className="px-4 py-2 hover:bg-gray-100">
+                <Link href="/cart">Cart</Link>
+              </li>
+              <li className="px-4 py-2 hover:bg-gray-100">
+                <Link href="/about">About Us</Link>
+              </li>
+              <li className="px-4 py-2 hover:bg-gray-100">
+                <Link href="/contact-us">Contact Us</Link>
+              </li>
+              <li className="px-4 py-2 hover:bg-gray-100">
+                <Link href="/faq">FAQ</Link>
+              </li>
+            </ul>
+          )}
+
+          {/* Mobile Navigation Links */}
+          <ul className="w-full text-center">
             <li>
-              <Link className="block py-2 hover:text-[#FB2E86]" href="/pages">
-                Pages
-              </Link>
-            </li>
-            <li>
-              <Link className="block py-2 hover:text-[#FB2E86]" href="/products">
+              <Link className="block py-2 hover:text-[#FB2E86]" href="/shoplist">
                 Products
               </Link>
             </li>
@@ -161,13 +157,13 @@ function Header() {
               </Link>
             </li>
             <li>
-              <Link className="block py-2 hover:text-[#FB2E86]" href="/shop">
+              <Link className="block py-2 hover:text-[#FB2E86]" href="/shoplist">
                 Shop
               </Link>
             </li>
             <li>
-              <Link className="block py-2 hover:text-[#FB2E86]" href="/account">
-                My Account
+              <Link className="block py-2 hover:text-[#FB2E86]" href="/contact">
+                Contact
               </Link>
             </li>
           </ul>
@@ -186,11 +182,11 @@ function Header() {
 
           {/* Mobile Cart and Wishlist */}
           <div className="flex justify-around px-4 py-2 border-t">
-          <Link href="/cart" className="flex items-center gap-1 text-sm hover:text-[#FB2E86]">
-      <ShoppingCartIcon className="w-5 h-5" />
-      <span>Cart</span>
-    </Link>
-            <Link href="/wishlist" className="flex items-center gap-1 text-sm hover:text-[#FB2E86]">
+            <Link href="/cart" className="flex items-center gap-1 text-sm hover:text-[#FB2E86]">
+              <ShoppingCartIcon className="w-5 h-5" />
+              <span>Cart</span>
+            </Link>
+            <Link href="#" className="flex items-center gap-1 text-sm hover:text-[#FB2E86]">
               <HeartIcon className="w-5 h-5" />
               <span>Wishlist</span>
             </Link>

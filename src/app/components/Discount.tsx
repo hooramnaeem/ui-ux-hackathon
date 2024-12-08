@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 function Discount() {
   return (
@@ -33,13 +34,13 @@ function Discount() {
             <p className="text-gray-600 mb-6"> Eu eget feugiat habitasse
               nec, bibendum condimentum. </p>
               <p className="text-gray-600 mb-2"> 
-              "  ✓ Material expose like metals", </p>
+                ✓ Material expose like metals. </p>
               <p className="text-gray-600 mb-2"> 
-              "  ✓ Clear lines and geomatric figures", </p>
+               ✓ Clear lines and geomatric figures. </p>
               <p className="text-gray-600 mb-2"> 
-              "  ✓ Simple neutral colours.", </p> 
+               ✓ Simple neutral colours. </p> 
               <p className="text-gray-600 mb-2"> 
-              "  ✓ Material expose like metals", </p> 
+               ✓ Material expose like metals. </p> 
 
             {/* Tick Marks with Features */}
             <ul className="space-y-4">
@@ -56,12 +57,13 @@ function Discount() {
               ))}
             </ul>
             {/* Shop Now Button */}
-            <div className="flex justify-center md:justify-start">
-              <button className="mt-8 bg-pink-600 text-white py-2 px-6 rounded hover:bg-pink-700 transition-colors">
-                Shop Now
-              </button>
+            
+          <Link href="/shoplist">
+            <button className="px-6 py-2 bg-[#FB2E86] text-white font-text rounded-md shadow-md hover:bg-pink-600">
+              Shop Now
+            </button>
+          </Link>
             </div>
-          </div>
 
           {/* Right Side - Image Section */}
           <div className="relative flex justify-center">

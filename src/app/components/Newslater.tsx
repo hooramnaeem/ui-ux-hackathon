@@ -1,5 +1,5 @@
 'use client';
-
+import Link from 'next/link';
 import Image from 'next/image';
 
 function Newslater() {
@@ -17,9 +17,11 @@ function Newslater() {
           </h2>
 
           {/* Subscribe Button */}
+          <Link href="/shoplist">
           <button className="bg-[#FB2E86] text-white px-6 py-2 rounded-non text-lg font-medium">
             Shop Now
           </button>
+          </Link>
         </div>
       </div>
 

@@ -1,5 +1,5 @@
 'use client';
-
+import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
@@ -37,12 +37,11 @@ function Hero() {
           </p>
 
           {/* Shop Now Button */}
-          <button
-            onClick={() => router.push('/grid-product')}
-            className="bg-[#FB2E86] text-white py-2 px-6 hover:bg-pink-700 transition-colors"
-          >
-            Shop Now
-          </button>
+          <Link href="/shoplist">
+            <button className="px-6 py-2 bg-[#FB2E86] text-white font-text rounded-md shadow-md hover:bg-pink-600">
+              Shop Now
+            </button>
+          </Link>
         </div>
 
       </div>

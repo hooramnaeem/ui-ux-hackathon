@@ -1,11 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
+import { AiOutlineHeart, AiOutlineShoppingCart, AiOutlineEye } from "react-icons/ai";
 
 const shoplist = [
   {
     id: 1,
     name: "Product 1",
-    image: "/images/product1.png",
+    image: "/images/shoplist1.png",
     price: "$120.00",
     oldPrice: "$150.00",
     description: "This is a brief description of Product 1.",
@@ -15,7 +16,7 @@ const shoplist = [
   {
     id: 2,
     name: "Product 2",
-    image: "/images/product2.png",
+    image: "/images/shoplist2.png",
     price: "$99.00",
     oldPrice: "$130.00",
     description: "This is a brief description of Product 2.",
@@ -157,28 +158,15 @@ const ShopList = () => {
                 {/* Action Buttons */}
                 <div className="mt-4 flex space-x-4">
                   <button className="flex items-center justify-center w-10 h-10 bg-gray-200 rounded-full hover:bg-gray-300">
-                    <Image
-                      src={"/icons/heart-b.svg"}
-                      alt={"heart"}
-                      width={24}
-                      height={24}
-                    />
+                    <AiOutlineHeart size={24} />
                   </button>
+                  <Link href="/cart">
+                    <button className="flex items-center justify-center w-10 h-10 bg-gray-200 rounded-full hover:bg-gray-300">
+                      <AiOutlineShoppingCart size={24} />
+                    </button>
+                  </Link>
                   <button className="flex items-center justify-center w-10 h-10 bg-gray-200 rounded-full hover:bg-gray-300">
-                    <Image
-                      src={"/icons/cart-b.svg"}
-                      alt={"cart"}
-                      width={24}
-                      height={24}
-                    />
-                  </button>
-                  <button className="flex items-center justify-center w-10 h-10 bg-gray-200 rounded-full hover:bg-gray-300">
-                    <Image
-                      src={"/icons/view.svg"}
-                      alt={"view"}
-                      width={24}
-                      height={24}
-                    />
+                    <AiOutlineEye size={24} />
                   </button>
                 </div>
               </div>

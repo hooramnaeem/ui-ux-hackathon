@@ -55,7 +55,7 @@ const BlogPage = () => {
         <div className="flex items-center gap-2">
           <Link href={"/"}>Home</Link>
           <span className="text-black mx-2">.</span>
-          <span className="text-[#FB2E86]">My Account</span>
+          <span className="text-[#FB2E86]">Latest Blogs</span>
         </div>
       </div>
 
