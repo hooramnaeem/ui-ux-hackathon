@@ -74,7 +74,7 @@ function Header() {
                 )}
               </li>
               <li>
-                <Link className="hover:text-[#FB2E86] transition-colors" href="/products">
+                <Link className="hover:text-[#FB2E86] transition-colors" href="/shoplist">
                   Products
                 </Link>
               </li>
