@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { AiOutlineHeart, AiOutlineShoppingCart, AiOutlineEye } from "react-icons/ai";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const shoplist = [
   {
@@ -26,7 +28,10 @@ const shoplist = [
 ];
 
 const ShopList = () => {
-  return (
+ return (
+ 
+  <>
+  <Header /> 
     <div className="font-sans text-[#151875]">
       {/* Header Section */}
       <div className="py-28 px-8">
@@ -60,7 +65,7 @@ const ShopList = () => {
             <input
               type="text"
               id="perPage"
-              className="w-16 p-1 border rounded text-sm focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className="w-16 p-1 border rounded text-sm focus:outline-none focus:ring-1 focus:ring-[#FB2E86]"
             />
           </div>
 
@@ -74,7 +79,7 @@ const ShopList = () => {
             </label>
             <select
               id="sortBy"
-              className="p-1 border rounded text-sm focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className="p-1 border rounded text-sm focus:outline-none focus:ring-1 focus:ring-[#FB2E86]"
             >
               <option value="bestMatch">Best Match</option>
               <option value="priceLowHigh">Price: Low to High</option>
@@ -84,13 +89,13 @@ const ShopList = () => {
 
           {/* View */}
           <div className="flex items-center gap-2">
-            <label htmlFor="view" className="text-sm font-medium text-gray-700">
+            <label htmlFor="view" className="text-sm font-medium focus:outline-none focus:ring-1 focus:ring-[#FB2E86]">
               View:
             </label>
             <input
               type="text"
               id="view"
-              className="w-16 p-1 border rounded text-sm focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className="w-16 p-1 border rounded text-sm focus:outline-none focus:ring-1 focus:ring-[#FB2E86]"
             />
           </div>
         </div>
@@ -175,6 +180,8 @@ const ShopList = () => {
         </div>
       </div>
     </div>
+    <Footer />
+    </>
   );
 };
 

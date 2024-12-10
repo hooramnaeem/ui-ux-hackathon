@@ -7,7 +7,6 @@ import Header from "../components/Header";
 function ContactUs() {
   return (
     <>
-    {/* Header */}
     <Header />
     <div className="w-full bg-gray-50">
       {/* Header Section */}
@@ -118,7 +117,6 @@ function ContactUs() {
      </div>
       </div>
     </div>
-     {/* Footer */}
      <Footer />
     </>
   

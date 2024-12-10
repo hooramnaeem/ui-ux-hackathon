@@ -1,8 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const AboutPage = () => {
   return (
+    <>
+    <Header />
     <div className="px-6 lg:px-20 py-10 font-sans text-[#151875]">
       {/* Hero Section */}
       <section className="grid grid-cols-1 lg:grid-cols-2 items-center gap-8">
@@ -89,6 +93,8 @@ const AboutPage = () => {
         </p>
       </section>
     </div>
+    <Footer />
+    </>
   );
 };
 

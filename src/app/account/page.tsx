@@ -63,7 +63,7 @@ function AccountPage() {
 
               {/* Forgot Password */}
               <div className="mb-4 text-right">
-                <Link href="/forgot-password" className="text-[#FB2E86] hover:underline">
+                <Link href="/forgetpassword" className="text-[#FB2E86] hover:underline">
                   Forgot your password?
                 </Link>
               </div>
@@ -80,7 +80,7 @@ function AccountPage() {
             {/* Create Account */}
             <div className="text-center mt-6 text-gray-600">
               Don’t have an Account?{' '}
-              <Link href="/register" className="text-[#FB2E86] hover:underline">
+              <Link href="/createaccount" className="text-[#FB2E86] hover:underline">
                 Create account
               </Link>
             </div>

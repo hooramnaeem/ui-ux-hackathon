@@ -44,6 +44,11 @@ function Header() {
           {/* Center Section: Navigation Links */}
           <div className="hidden sm:flex items-center gap-x-8">
             <ul className="flex gap-x-8 items-center">
+              <li>
+                <Link className="hover:text-[#FB2E86] transition-colors" href="/">
+                  Home
+                </Link>
+              </li>
               <li className="relative">
                 <button
                   className="hover:text-[#FB2E86] transition-colors"
@@ -147,6 +152,11 @@ function Header() {
           {/* Mobile Navigation Links */}
           <ul className="w-full text-center">
             <li>
+              <Link className="block py-2 hover:text-[#FB2E86]" href="/">
+                Home
+              </Link>
+            </li>
+            <li>
               <Link className="block py-2 hover:text-[#FB2E86]" href="/shoplist">
                 Products
               </Link>
@@ -162,8 +172,8 @@ function Header() {
               </Link>
             </li>
             <li>
-              <Link className="block py-2 hover:text-[#FB2E86]" href="/contact">
-                Contact
+              <Link className="block py-2 hover:text-[#FB2E86]" href="/account">
+                My Account
               </Link>
             </li>
           </ul>
