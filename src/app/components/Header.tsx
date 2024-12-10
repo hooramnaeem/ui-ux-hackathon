@@ -84,13 +84,13 @@ function Header() {
                 </Link>
               </li>
               <li>
-                <Link className="hover:text-[#FB2E86] transition-colors" href="/shop">
+                <Link className="hover:text-[#FB2E86] transition-colors" href="/shoplist">
                   Shop
                 </Link>
               </li>
               <li>
                 <Link className="hover:text-[#FB2E86] transition-colors" href="/contact-us">
-                  Contact
+                Contact
                 </Link>
               </li>
             </ul>
