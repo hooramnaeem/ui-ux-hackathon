@@ -19,7 +19,7 @@ const AboutPage = () => {
             ligula et libero sodales suscipit. Morbi arcu eros, tincidunt non
             turpis non, bibendum porttitor nisi.
           </p>
-          <Link href="/contact">
+          <Link href="/contact-us">
             <button className="px-6 py-2 bg-pink-500 text-white font-semibold rounded-md shadow-md hover:bg-pink-600">
               Contact Us
             </button>

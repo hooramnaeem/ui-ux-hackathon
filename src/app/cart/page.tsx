@@ -21,7 +21,7 @@ type CartItem = {
 const initialCartProducts: CartItem[] = [
   {
     id: 1,
-    name: "Ut diam consequat",
+    name: "Ut diam",
     price: 30,
     quantity: 2,
     color: "Red",
@@ -30,7 +30,7 @@ const initialCartProducts: CartItem[] = [
   },
   {
     id: 2,
-    name: "Vel faucibus posuere",
+    name: "faucibus posuere",
     price: 45,
     quantity: 1,
     color: "Blue",
@@ -48,7 +48,7 @@ const initialCartProducts: CartItem[] = [
   },
   {
     id: 4,
-    name: "Elit massa diam",
+    name: "Elit massa dia",
     price: 50,
     quantity: 2,
     color: "Yellow",
@@ -57,7 +57,7 @@ const initialCartProducts: CartItem[] = [
   },
   {
     id: 5,
-    name: "Proin pharetra elementum",
+    name: "Proin pharetra",
     price: 35,
     quantity: 3,
     color: "Black",
