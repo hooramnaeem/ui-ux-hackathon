@@ -7,23 +7,69 @@ import Footer from "../components/Footer";
 const shoplist = [
   {
     id: 1,
-    name: "Product 1",
+    name: "Accumsan tincidunt",
     image: "/images/shoplist1.png",
     price: "$120.00",
     oldPrice: "$150.00",
-    description: "This is a brief description of Product 1.",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.",
     rating: 4,
-    colors: ["bg-red-500", "bg-blue-500", "bg-green-500"],
+    colors: ["bg-[#DE9034]", "bg-[#FB2E86]", "bg-[#5E37FF]"]
   },
   {
     id: 2,
-    name: "Product 2",
+    name: "In nulla",
     image: "/images/shoplist2.png",
     price: "$99.00",
     oldPrice: "$130.00",
-    description: "This is a brief description of Product 2.",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.",
     rating: 5,
-    colors: ["bg-yellow-500", "bg-purple-500", "bg-gray-500"],
+    colors: ["bg-[#DE9034]", "bg-[#FB2E86]", "bg-[#5E37FF]"]
+  },
+  {
+    id: 3,
+    name: "Vel sem",
+    image: "/images/shoplist3.png",
+    price: "$99.00",
+    oldPrice: "$130.00",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.",
+    rating: 5,
+    colors: ["bg-[#DE9034]", "bg-[#FB2E86]", "bg-[#5E37FF]"]
+  }, {
+    id: 4,
+    name: "Porttitor cum",
+    image: "/images/shoplist4.png",
+    price: "$99.00",
+    oldPrice: "$130.00",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.",
+    rating: 5,
+    colors: ["bg-[#DE9034]", "bg-[#FB2E86]", "bg-[#5E37FF]"]
+  }, {
+    id: 5,
+    name: "Nunc in",
+    image: "/images/shoplist5.png",
+    price: "$99.00",
+    oldPrice: "$130.00",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.",
+    rating: 5,
+    colors: ["bg-[#DE9034]", "bg-[#FB2E86]", "bg-[#5E37FF]"]
+  }, {
+    id: 6,
+    name: "Vitae facilisis",
+    image: "/images/shoplist6.png",
+    price: "$99.00",
+    oldPrice: "$130.00",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.",
+    rating: 5,
+    colors: ["bg-[#DE9034]", "bg-[#FB2E86]", "bg-[#5E37FF]"]
+  }, {
+    id: 7,
+    name: "Curabitur lectus",
+    image: "/images/shoplist7.png",
+    price: "$99.00",
+    oldPrice: "$130.00",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.",
+    rating: 5,
+    colors: ["bg-[#DE9034]", "bg-[#FB2E86]", "bg-[#5E37FF]"]
   },
 ];
 

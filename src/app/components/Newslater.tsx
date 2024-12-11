@@ -16,7 +16,6 @@ function Newslater() {
             Get Latest Update By Subscribe Our Newsletter
           </h2>
 
-          {/* Subscribe Button */}
           <Link href="/shoplist">
           <button className="bg-[#FB2E86] text-white px-6 py-2 rounded-non text-lg font-medium">
             Shop Now

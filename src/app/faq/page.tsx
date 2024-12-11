@@ -8,8 +8,8 @@ function FAQ() {
     <>
       <Header /> 
 
-      <div className="w-full bg-gray-100 py-8">
-        {/* Breadcrumb Section */}
+     <div className="w-full bg-gray-100 py-8">
+       {/* Breadcrumb Section */}
         <div className="bg-gray-100 py-8 px-4 md:px-8">
           <h1 className="text-[#101750] text-4xl font-bold text-center">FAQ</h1>
           <p className="mt-4 text-black text-center text-sm">
