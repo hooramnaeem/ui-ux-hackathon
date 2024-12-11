@@ -11,7 +11,7 @@ const shoplist = [
     image: "/images/shoplist1.png",
     price: "$120.00",
     oldPrice: "$150.00",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in phasellus non in justo.",
     rating: 4,
     colors: ["bg-[#DE9034]", "bg-[#FB2E86]", "bg-[#5E37FF]"]
   },
@@ -21,7 +21,7 @@ const shoplist = [
     image: "/images/shoplist2.png",
     price: "$99.00",
     oldPrice: "$130.00",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.",
+    description: "Lorem ipsum dolor sit amet, consectetur. Magna in est adipiscing in phasellus non in justo.",
     rating: 5,
     colors: ["bg-[#DE9034]", "bg-[#FB2E86]", "bg-[#5E37FF]"]
   },
@@ -31,7 +31,7 @@ const shoplist = [
     image: "/images/shoplist3.png",
     price: "$99.00",
     oldPrice: "$130.00",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est.",
     rating: 5,
     colors: ["bg-[#DE9034]", "bg-[#FB2E86]", "bg-[#5E37FF]"]
   }, {
@@ -40,7 +40,7 @@ const shoplist = [
     image: "/images/shoplist4.png",
     price: "$99.00",
     oldPrice: "$130.00",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing.",
     rating: 5,
     colors: ["bg-[#DE9034]", "bg-[#FB2E86]", "bg-[#5E37FF]"]
   }, {
@@ -49,7 +49,7 @@ const shoplist = [
     image: "/images/shoplist5.png",
     price: "$99.00",
     oldPrice: "$130.00",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing.",
     rating: 5,
     colors: ["bg-[#DE9034]", "bg-[#FB2E86]", "bg-[#5E37FF]"]
   }, {
@@ -58,7 +58,7 @@ const shoplist = [
     image: "/images/shoplist6.png",
     price: "$99.00",
     oldPrice: "$130.00",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in.",
     rating: 5,
     colors: ["bg-[#DE9034]", "bg-[#FB2E86]", "bg-[#5E37FF]"]
   }, {
@@ -67,7 +67,7 @@ const shoplist = [
     image: "/images/shoplist7.png",
     price: "$99.00",
     oldPrice: "$130.00",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing.",
     rating: 5,
     colors: ["bg-[#DE9034]", "bg-[#FB2E86]", "bg-[#5E37FF]"]
   },
