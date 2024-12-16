@@ -68,7 +68,7 @@ function Header() {
                       <Link href="/ordercompleted">Order Completed</Link>
                     </li>
                     <li className="px-4 py-2 hover:bg-gray-100">
-                      <Link href="/about-us">About Us</Link>
+                      <Link href="/about">About Us</Link>
                     </li>
                     <li className="px-4 py-2 hover:bg-gray-100">
                       <Link href="/contact-us">Contact Us</Link>
@@ -84,11 +84,6 @@ function Header() {
                     </li>
                   </ul>
                 )}
-              </li>
-              <li>
-                <Link className="hover:text-[#FB2E86] transition-colors" href="/shoplist">
-                  Products
-                </Link>
               </li>
               <li>
                 <Link className="hover:text-[#FB2E86] transition-colors" href="/blog">
@@ -181,11 +176,6 @@ function Header() {
             <li>
               <Link className="block py-2 hover:text-[#FB2E86]" href="/">
                 Home
-              </Link>
-            </li>
-            <li>
-              <Link className="block py-2 hover:text-[#FB2E86]" href="/shoplist">
-                Products
               </Link>
             </li>
             <li>

@@ -23,12 +23,12 @@ function LatestProducts() {
   {["New Arrival", "Best Seller", "Featured", "Special Offers"].map((tab) => (
     <button
       key={tab}
-      className="text-[#3F509E] text-lg font-medium relative group hover:text-red-600"
+      className="text-[#3F509E] text-lg font-medium relative group hover:text-[#FB2E86]"
     >
       {tab}
       {/* Underline */}
       <span
-        className="absolute left-0 bottom-0 w-0 h-[2px] bg-red-600 transition-all duration-300 group-hover:w-full"
+        className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#FB2E86] transition-all duration-300 group-hover:w-full"
       ></span>
     </button>
   ))}
