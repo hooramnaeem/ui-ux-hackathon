@@ -13,33 +13,33 @@ function TopCategories() {
   return (
     <div className="w-full bg-white py-20">
       {/* Heading */}
-      <h2 className="text-center text-[#3F509E] text-3xl font-bold mb-12">Top Categories</h2>
+      <h2 className="text-center text-[#151875] font-josefin text-3xl font-bold mb-12">Top Categories</h2>
 
       {/* Categories Grid */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-screen-xl mx-auto">
+      <div className="grid lg:grid-cols-4 sm:grid-cols-1 md:grid-cols-2  gap-0 max-w-screen-xl mx-auto">
         {categories.map((category) => (
           <div key={category.id} className="relative group flex flex-col items-center">
             {/* Circle Image with Hover Effect */}
-            <div className="w-[150px] h-[150px] flex justify-center items-center bg-gray-200 rounded-full relative overflow-hidden">
+            <div className="w-[240px] h-[250px] rounded-full shadow-lg shadow-gray-300 flex justify-center items-center bg-[#F6F7FB]  relative overflow-hidden">
               <Image
                 src={category.img}
                 alt={category.name}
-                width={120}
-                height={120}
-                className="object-cover"
+                width={158}
+                height={157}
+                className="object-cover "
               />
 
               {/* Hover Blue Circle Outline */}
-              <div className="absolute inset-0 rounded-full border-4 border-transparent group-hover:border-[#3F509E] transition-all duration-300"></div>
+              <div className="absolute inset-0 rounded-full  border-b-8 border-transparent group-hover:border-[#3F509E] transition-all duration-300"></div>
 
               {/* Hover View Shop Button */}
-              <button className="absolute bottom-2 bg-[#08D15F] text-white px-3 py-1 text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <button className="absolute bottom-4 bg-[#08D15F] text-white px-3 py-1 text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 View Shop
               </button>
             </div>
 
             {/* Category Name and Price */}
-            <h3 className="text-[#3F509E] font-bold mt-4">{category.name}</h3>
+            <h3 className="text-[#151875] font-josefin font-bold mt-4">{category.name}</h3>
             <p className="text-gray-600">{category.price}</p>
           </div>
         ))}
@@ -48,8 +48,8 @@ function TopCategories() {
       {/* Pink Dots */}
       <div className="flex justify-center mt-4">
         <span className="w-3 h-3 bg-pink-600 rounded-full mx-1"></span>
-        <span className="w-3 h-3 bg-pink-600 rounded-full mx-1"></span>
-        <span className="w-3 h-3 bg-pink-600 rounded-full mx-1"></span>
+        <span className="w-3 h-3 bg-white border-2 border-pink-600 rounded-full mx-1"></span>
+        <span className="w-3 h-3 bg-white  border-2 border-pink-600 rounded-full mx-1"></span>
       </div>
     </div>
   );

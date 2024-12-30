@@ -187,12 +187,9 @@ const ShopList = () => {
                   <span className="text-red-500 line-through">
                     {product.oldPrice}
                   </span>
-                </div>
-                <p className="mt-2 text-gray-600 w-96">{product.description}</p>
-
-                {/* Rating */}
-                <div className="mt-2 flex items-center">
-                  {Array.from({ length: 5 }).map((_, index) => (
+                  {/* Rating */}
+                  <div className="mt-2 flex items-center">
+                  {Array.from({ length: 4 }).map((_, index) => (
                     <span
                       key={index}
                       className={`${
@@ -206,17 +203,40 @@ const ShopList = () => {
                   ))}
                 </div>
 
+
+
+                {/* Rating */}
+                <div className="mt-2 flex items-center">
+                  {Array.from({ length: 1 }).map((_, index) => (
+                    <span
+                      key={index}
+                      className={`${
+                        index < product.rating
+                          ? "text-gray-300"
+                          : "text-gray-300"
+                      } text-lg`}
+                    >
+                      ★
+                    </span>
+                  ))}
+                </div>
+                </div>
+                                
+                <p className="mt-2 text-gray-600 w-96">{product.description}</p>
+
+
+
                 {/* Action Buttons */}
                 <div className="mt-4 flex space-x-4">
-                  <button className="flex items-center justify-center w-10 h-10 bg-gray-200 rounded-full hover:bg-gray-300">
+                  <button className="flex items-center justify-center w-10 h-10 bg-gray-100 shadow-md shadow-zinc-300 rounded-full hover:bg-gray-300">
                     <AiOutlineHeart size={24} />
                   </button>
                   <Link href="/cart">
-                    <button className="flex items-center justify-center w-10 h-10 bg-gray-200 rounded-full hover:bg-gray-300">
+                    <button className="flex items-center justify-center w-10 h-10 bg-gray-100 shadow-md shadow-zinc-300 rounded-full hover:bg-gray-300">
                       <AiOutlineShoppingCart size={24} />
                     </button>
                   </Link>
-                  <button className="flex items-center justify-center w-10 h-10 bg-gray-200 rounded-full hover:bg-gray-300">
+                  <button className="flex items-center justify-center w-10 h-10 bg-gray-100 shadow-md shadow-zinc-300 rounded-full hover:bg-gray-300">
                     <AiOutlineEye size={24} />
                   </button>
                 </div>
@@ -226,6 +246,18 @@ const ShopList = () => {
         </div>
       </div>
     </div>
+          {/* Logos Section */}
+          <div className="w-full py-12">
+            <div className="max-w-screen-xl mx-auto flex justify-center">
+              <Image
+                src="/images/logo.png"
+                alt="Logos"
+                width={800} 
+                height={100} 
+                className="object-contain"
+              />
+            </div>
+          </div>
     <Footer />
     </>
   );

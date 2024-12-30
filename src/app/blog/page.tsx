@@ -84,14 +84,14 @@ const BlogPage = () => {
                 </div>
                 <h2 className="text-xl font-bold mt-2 text-[#001F54]">
                   {blog.title}
-                </h2> {/* Dark blue */}
+                </h2> 
                 <p className="text-gray-600 mt-2">{blog.excerpt}</p>
-                <a
+                <Link
                   href="#"
                   className="text-[#001F54] font-semibold mt-2 inline-block"
                 >
                   Read More
-                </a> {/* Dark blue */}
+                </Link> 
               </div>
             </div>
           ))}

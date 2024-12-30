@@ -18,8 +18,9 @@ const config: Config = {
         secondary: '#FF6347', // Example of a secondary color
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'], // Custom font for the project
-        // Add more if needed
+        josefin: ['"Josefin Sans"', 'sans-serif'],
+          lato: ['Lato'],
+
       },
       spacing: {
         // Custom spacing if needed

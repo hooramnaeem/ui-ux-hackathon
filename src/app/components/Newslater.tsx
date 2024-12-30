@@ -5,19 +5,19 @@ import Image from 'next/image';
 function Newslater() {
   return (
     <div className="w-full bg-white">
-      {/* Newslater Section */}
+    
       <div
         className="w-full bg-cover bg-center py-20"
         style={{ backgroundImage: "url('/images/background.png')" }}
       >
         <div className="max-w-screen-xl mx-auto text-center">
           {/* Heading */}
-          <h2 className="text-3xl font-bold text-[#151875] mb-6">
-            Get Latest Update By Subscribe Our Newsletter
+          <h2 className="text-3xl font-bold font-josefin text-[#151875] mb-6">
+            Get Latest Update By Subscribe <br/> Our Newsletter
           </h2>
 
           <Link href="/shoplist">
-          <button className="bg-[#FB2E86] text-white px-6 py-2 rounded-non text-lg font-medium">
+          <button className="bg-[#FB2E86] font-josefin text-white px-6 py-2 rounded-sm text-lg font-medium">
             Shop Now
           </button>
           </Link>
@@ -30,8 +30,8 @@ function Newslater() {
           <Image
             src="/images/logo.png"
             alt="Logos"
-            width={800} // Adjust as per your design
-            height={100} // Adjust as per your design
+            width={800} 
+            height={100} 
             className="object-contain"
           />
         </div>

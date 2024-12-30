@@ -1,30 +1,25 @@
 'use client';
-
 import React from 'react';
 import Link from 'next/link';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Common from '../components/common';
+import Image from 'next/image';
 
 function AccountPage() {
   return (
     <>
       {/* Header */}
       <Header />
+      <h1 className="text-[#101750] font-josefin text-4xl font-extrabold mb-[-40px] ml-12">My Acount</h1>
+      <Common/>
 
       {/* Page Content */}
       <div className="bg-gray-100 py-10">
         <div className="max-w-4xl mx-auto px-4">
           {/* Heading */}
-          <h1 className="text-center text-3xl font-bold text-[#151875] mb-4">My Account</h1>
 
-          {/* Breadcrumb */}
-          <div className="bg-gray-200 py-3 px-6 rounded-md text-sm text-center">
-            <span className="text-black">Home</span>
-            <span className="text-black mx-2">.</span>
-            <span className="text-black">Pages</span>
-            <span className="text-black mx-2">.</span>
-            <span className="text-[#FB2E86]">My Account</span>
-          </div>
+         
 
           {/* Login Form */}
           <div className="bg-white mt-8 p-8 rounded-md shadow-md">
@@ -86,8 +81,19 @@ function AccountPage() {
             </div>
           </div>
         </div>
+        
       </div>
-
+  <div className="w-full py-12">
+        <div className="max-w-screen-xl mx-auto flex justify-center">
+          <Image
+            src="/images/logo.png"
+            alt="Logos"
+            width={800} 
+            height={100} 
+            className="object-contain"
+          />
+        </div>
+      </div>
       {/* Footer */}
       <Footer />
     </>

@@ -36,7 +36,7 @@ function CreateAccount() {
       password: '',
       confirmPassword: '',
     });
-    setTimeout(() => setAlertMessage(''), 3000); // Hide alert after 3 seconds
+    setTimeout(() => setAlertMessage(''), 3000); 
   };
 
   return (

@@ -6,7 +6,7 @@ function Discount() {
     <div className="w-full py-20">
       <div className="w-full max-w-screen-xl mx-auto">
         {/* Heading */}
-        <h2 className="text-[#3F509E] text-4xl font-bold text-center mb-8">Discount Item</h2>
+        <h2 className="text-[#151875] text-4xl font-bold text-center font-josefin mb-8">Discount Item</h2>
 
         {/* Tag Buttons */}
         <div className="flex justify-center space-x-8 mb-12">
@@ -25,22 +25,22 @@ function Discount() {
         {/* Main Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Left Side - Text Section */}
-          <div className="text-center md:text-left">
-            <h3 className="text-[#3F509E] text-3xl font-bold mb-4">20% Discount Of All Products</h3>
-            <h4 className="text-pink-600 text-xl font-semibold mb-6">Eames Sofa Compact</h4>
-            <p className="text-gray-600 mb-2">
+          <div className="text-center lg:ml-36 sm:ml-0 md:text-left">
+            <h3 className="text-[#151875] text-3xl font-josefin font-bold mb-4">20% Discount Of All Products</h3>
+            <h4 className="text-pink-500 text-xl font-lato font-semibold mb-6">Eames Sofa Compact</h4>
+            <p className="text-gray-400 mb-2">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </p> 
-            <p className="text-gray-600 mb-6"> Eu eget feugiat habitasse
+            <p className="text-gray-400 mb-6"> Eu eget feugiat habitasse
               nec, bibendum condimentum. </p>
-              <p className="text-gray-600 mb-2"> 
-                ✓ Material expose like metals. </p>
-              <p className="text-gray-600 mb-2"> 
-               ✓ Clear lines and geomatric figures. </p>
-              <p className="text-gray-600 mb-2"> 
-               ✓ Simple neutral colours. </p> 
-              <p className="text-gray-600 mb-2"> 
-               ✓ Material expose like metals. </p> 
+              <p className="text-gray-400 flex flex-col md:mb-2 md:flex-row whitespace-nowrap"> 
+                ✓ Material expose like metals.  <span className=" ml-10 text-gray-400 mb-2 whitespace-nowrap"> 
+                ✓ Clear lines and geomatric figures. </span></p>
+             
+              <p className="text-gray-400  whitespace-nowrap flex flex-col md:mb-2 md:flex-row whitespace"> 
+               ✓ Simple neutral colours. <span className="text-gray-400 ml-20 mb-2"> 
+               ✓ Material expose like metals.  </span></p> 
+              
 
             {/* Tick Marks with Features */}
             <ul className="space-y-4">
@@ -59,7 +59,7 @@ function Discount() {
             {/* Shop Now Button */}
             
           <Link href="/shoplist">
-            <button className="px-6 py-2 bg-[#FB2E86] text-white font-text rounded-md shadow-md hover:bg-pink-600">
+            <button className="px-6 font-lato py-2 mt-4 bg-[#FB2E86] text-white font-text rounded-sm shadow-md hover:bg-pink-600">
               Shop Now
             </button>
           </Link>

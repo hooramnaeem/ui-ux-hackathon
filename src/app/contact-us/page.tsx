@@ -72,7 +72,7 @@ function ContactUs() {
 
         {/* Right Section */}
         <div className="flex-1">
-          {/* Contact Way */}
+          
           <h2 className="text-2xl font-bold text-[#151875] mb-8">Contact Way</h2>
 
           <div className="space-y-6">
@@ -108,10 +108,10 @@ function ContactUs() {
 
           <div>
       <Image
-        src="/images/connect.png" // Reference the image using its path in the public folder
+        src="/images/connect.png" 
         alt="Connect"
-        width={500} // Adjust the width as needed
-        height={500} // Adjust the height as needed
+        width={500} 
+        height={500} 
       />
     </div>    
      </div>

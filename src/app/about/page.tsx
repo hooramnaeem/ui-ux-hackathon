@@ -2,14 +2,27 @@ import Image from "next/image";
 import Link from "next/link";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import Common from "../components/common";
 
 const AboutPage = () => {
   return (
     <>
     <Header />
-    <div className="px-6 lg:px-20 py-10 font-sans text-[#151875]">
-      {/* Hero Section */}
+    <h1 className="text-[#101750] font-josefin text-4xl font-extrabold mb-[-40px] ml-12">About Us</h1>
+    <Common/>
+    
+    <div className="px-6 lg:px-20 py-10 font-josefin text-[#151875]">
       <section className="grid grid-cols-1 lg:grid-cols-2 items-center gap-8">
+
+      <div className="">
+          <Image
+            src="/images/about.png"
+            alt="Ecommerce Meeting"
+            width={500}
+            height={500}
+            className="rounded-lg shadow-md"
+          />
+        </div>
         <div>
           <h2 className="text-4xl font-bold mb-6">
             Know About Our Ecommerce Business, History
@@ -25,16 +38,11 @@ const AboutPage = () => {
             </button>
           </Link>
         </div>
-        <div>
-          <Image
-            src="/images/about.png"
-            alt="Ecommerce Meeting"
-            width={500}
-            height={500}
-            className="rounded-lg shadow-md"
-          />
-        </div>
+       
+        
+      
       </section>
+      
 
       {/* Features Section */}
       <section className="my-16 text-center">
@@ -64,35 +72,40 @@ const AboutPage = () => {
             </div>
           ))}
         </div>
+        
       </section>
 
       {/* Testimonials Section */}
-      <section className="my-16 text-center">
+      <section className="my-16 text-center ">
         <h2 className="text-3xl font-bold mb-8">Our Client Say!</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 ">
           {[
-            { name: "Selina Gomez", image: "/images/client1.png" },
-            { name: "John Doe", image: "/images/client2.png" },
-            { name: "Emma Watson", image: "/images/client3.png" },
+            { name: "", image: "/images/client1.png" },
+            { name: "", image: "/images/client2.png" },
+            { name: "", image: "/images/client3.png" },
           ].map((client, index) => (
-            <div key={index} className="flex flex-col items-center">
+            <div key={index} className="flex flex-col items-center ">
               <Image
                 src={client.image}
                 alt={client.name}
-                width={500}
-                height={500}
-                className="w-24 h-24 rounded-full object-cover shadow-md mb-4"
+                width={100}
+                height={100}
+                className=" object-cover shadow-md mb-4 "
               />
-              <p className="text-[#151875] font-semibold">{client.name}</p>
+              
+              
             </div>
           ))}
+            <h1 className="font-bold font-josefin text-[#101750] text-2xl ml-128 whitespace-nowrap">Selina Gomez</h1>
+
         </div>
         <p className="mt-6 text-gray-600">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non odio
-          eleifend nisl sollicitudin aliquet ut non felis.
+          eleifend nisl sollicitudin aliquet ut non felis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non duis ultrices quam vel dui sollicitudin aliquet id arcu. Nam vitae a enim nunc, sed sapien egestas ac nam. Tristique ultrices dolor aliquam lacus volutpat praesent.
         </p>
       </section>
     </div>
+   
     <Footer />
     </>
   );

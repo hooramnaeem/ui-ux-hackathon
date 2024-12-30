@@ -16,14 +16,14 @@ function LatestProducts() {
   return (
     <div className="w-full bg-white py-20">
       {/* Heading */}
-      <h2 className="text-[#3F509E] text-4xl text-center font-bold mb-8">Latest Products</h2>
+      <h2 className="text-[#151875] text-4xl text-center font-josefin font-bold mb-8">Latest Products</h2>
 
       {/* Tabs */}
-<div className="flex justify-center space-x-8 mb-16">
+<div className="flex justify-center font-lato space-x-8 mb-16">
   {["New Arrival", "Best Seller", "Featured", "Special Offers"].map((tab) => (
     <button
       key={tab}
-      className="text-[#3F509E] text-lg font-medium relative group hover:text-[#FB2E86]"
+      className="text-[#151875] text-lg font-medium relative group hover:text-[#FB2E86]"
     >
       {tab}
       {/* Underline */}
@@ -40,7 +40,7 @@ function LatestProducts() {
         {products.map((product, index) => (
           <div key={product.id} className="relative group">
             {/* Product Image */}
-            <div className="w-full bg-gray-200 flex justify-center items-center relative overflow-hidden h-[300px] transition-all duration-300 group-hover:bg-white">
+            <div className="w-full bg-[#EEEFFB] flex justify-center items-center relative overflow-hidden h-[300px] transition-all duration-300 group-hover:bg-white">
               {/* Sale Tag */}
               {product.sale && (
                 <span className="absolute top-2 left-2 bg-[#3F509E] text-white text-sm px-3 py-1 rounded">
@@ -56,28 +56,29 @@ function LatestProducts() {
               />
 
               {/* Icons */}
-              <div className="absolute top-2 right-2 space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <button className="bg-white p-2 rounded-full shadow">
-                  <HeartIcon className="w-6 h-6 text-[#3F509E]" />
-                </button>
-                <button className="bg-white p-2 rounded-full shadow">
-                  <MagnifyingGlassIcon className="w-6 h-6 text-[#3F509E]" />
-                </button>
-                <button className="bg-white p-2 rounded-full shadow">
+              <div className="absolute  right-[350px] top-32  flex flex-col space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <button className="hover:bg-[#EEEFFB] p-2 rounded-full shadow">
                   <ShoppingCartIcon className="w-6 h-6 text-[#3F509E]" />
                 </button>
+                <button className="hover:bg-[#EEEFFB] p-2 rounded-full shadow">
+                  <HeartIcon className="w-6 h-6 text-[#3F509E]" />
+                </button>
+                <button className="hover:bg-[#EEEFFB] p-2 rounded-full shadow">
+                  <MagnifyingGlassIcon className="w-6 h-6 text-[#3F509E]" />
+                </button>
+                
               </div>
             </div>
 
             {/* Product Details */}
-            <div className="text-center mt-4">
-              <h3 className="text-lg font-semibold text-[#3F509E]">Comfy Handy Craft</h3>
-              <div className="mt-2 text-gray-600 flex justify-center items-center gap-2">
-                <span className="text-red-600 font-medium line-through">$65.00</span>
-                <span className="text-gray-800">$42.00</span>
+            <div className="text-center flex flex-row space-x-2 font-josefin mt-4">
+              <h3 className="text-lg font-semibold underline decoration-slate-400 text-[#151875] mr-[100px]">Comfy Handy Craft</h3>
+              <div className="text-[#151875]  ">$42.00</div> 
+              <div className="justify-center items-center gap-3 text-[#FB2448] font-medium line-through">$65.00</div> 
+                
               </div>
             </div>
-          </div>
+          
         ))}
       </div>
     </div>

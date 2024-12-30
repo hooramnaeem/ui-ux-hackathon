@@ -21,7 +21,7 @@ function Footer() {
       <div className="w-[90%] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
         {/* First Section */}
         <div>
-          <h1 className="text-[#151875] text-3xl font-bold mb-4">Hekto</h1>
+          <h1 className="text-[#151875] text-3xl font-bold font-josefin mb-4">Hekto</h1>
           <div className="flex items-center border border-gray-300 rounded-md overflow-hidden mb-4">
             <input
               type="email"
@@ -32,7 +32,7 @@ function Footer() {
             />
             <button
               onClick={handleSendEmail}
-              className="bg-[#FB2E86] text-white px-4 py-2 text-sm font-medium hover:bg-pink-700 transition-colors"
+              className="bg-[#FB2E86] whitespace-nowrap text-white px-4 py-2  text-sm font-medium hover:bg-pink-700 transition-colors"
             >
               Sign Up
             </button>
@@ -42,14 +42,14 @@ function Footer() {
               {message}
             </p>
           )}
-          <p className="mt-4 text-gray-500">Contact Info</p>
-          <p>17 Princess Road, London, Greater London NW1 8JR, UK</p>
+          <p className="mt-4 font-lato text-[#9196AA]">Contact Info</p>
+          <p className=" font-lato text-[#9196AA]">17 Princess Road, London, Greater London NW1 8JR, UK</p>
         </div>
 
         {/* Second Section */}
         <div>
-          <h2 className="text-[#151875] text-xl font-semibold mb-4">Categories</h2>
-          <ul className="space-y-2">
+          <h2 className="text-[#151875] text-xl font-semibold font-josefin mb-4">Categories</h2>
+          <ul className="space-y-2 font-lato text-[#9196AA] ">
             <li>Laptops & Computers</li>
             <li>Cameras & Photography</li>
             <li>Smart Phones & Tablets</li>
@@ -60,8 +60,8 @@ function Footer() {
 
         {/* Third Section */}
         <div>
-          <h2 className="text-[#151875] text-xl font-semibold mb-4">Customer Care</h2>
-          <ul className="space-y-2">
+          <h2 className="text-[#151875] text-xl font-semibold font-josefin mb-4">Customer Care</h2>
+          <ul className="space-y-2 font-lato text-[#9196AA]">
             <li>My Account</li>
             <li>Discount</li>
             <li>Returns</li>
@@ -72,8 +72,8 @@ function Footer() {
 
         {/* Fourth Section */}
         <div>
-          <h2 className="text-[#151875] text-xl font-semibold mb-4">Pages</h2>
-          <ul className="space-y-2">
+          <h2 className="text-[#151875] text-xl font-semibold font-josefin mb-4">Pages</h2>
+          <ul className="space-y-2 font-lato text-[#9196AA]">
             <li>Blog</li>
             <li>Browse the Shop</li>
             <li>Category</li>
@@ -87,15 +87,15 @@ function Footer() {
       {/* Footer Bottom */}
       <div className="mt-12 border-t border-gray-200 pt-8">
         <div className="flex justify-between items-center w-[90%] mx-auto">
-          <p className="text-gray-500">&copy; Webecy - All Rights Reserved. Muqaddas Fatima</p>
+          <p className="text-[#9196AA] font-lato">&copy; Webecy - All Rights Reserved</p>
           <div className="flex space-x-4">
-            <a href="https://github.com/MuqaddasFatima24" className="w-8 h-8 rounded-full bg-[#151875] flex items-center justify-center text-white hover:bg-blue-700">
+            <a href="https://www.facebook.com" target='blank'  className="w-8 h-8 rounded-full bg-[#151875] flex items-center justify-center text-white hover:bg-blue-700">
               <FaFacebookF />
             </a>
-            <a href="@muqadas_fatima25" className="w-8 h-8 rounded-full bg-[#151875] flex items-center justify-center text-white hover:bg-blue-700">
+            <a href="https://www.threads.com" target='blank'  className="w-8 h-8 rounded-full bg-[#151875] flex items-center justify-center text-white hover:bg-blue-700">
               <FaTwitter />
             </a>
-            <a href="@muqadas_fatima25" className="w-8 h-8 rounded-full bg-[#151875] flex items-center justify-center text-white hover:bg-blue-700">
+            <a href="https:www.instagram.com" target='blank' className="w-8 h-8 rounded-full bg-[#151875] flex items-center justify-center text-white hover:bg-blue-700">
               <FaInstagram />
             </a>
           </div>

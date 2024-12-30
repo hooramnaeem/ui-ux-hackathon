@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import Image from 'next/image';
-import pinkBackground from '/public/images/pink.png'; // Importing pink background image
+import pinkBackground from '/public/images/pink.png'; 
 
 function Unique() {
   return (
@@ -10,29 +10,31 @@ function Unique() {
         {/* Left Side */}
         <div className="relative flex justify-center items-center">
           {/* Pink Background */}
-          <div className="absolute inset-0 flex justify-center items-center">
+          <div className="absolute sm:ml-0 lg:ml-40 inset-0 flex justify-center items-center">
             <Image
               src={pinkBackground}
               alt="Background"
-              layout="fill"
-              className="object-cover"
+              width={350}
+              height={350}
+              
+              className="object-cover "
             />
           </div>
-
+          
           {/* Sofa Image */}
           <Image
             src="/images/sofa2.png"
             alt="Sofa"
-            width={400}
-            height={400}
-            className="relative z-10 object-contain"
+            width={350}
+            height={350}
+            className="relative sm:ml-0 lg:ml-40 z-10 object-contain"
           />
         </div>
 
         {/* Right Side */}
-        <div className="px-4 md:px-0">
+        <div className="px-4 mr-40 md:px-0">
           {/* Heading */}
-          <h2 className="text-[#3F509E] text-3xl font-bold mb-6">
+          <h2 className="text-[#151875] font-josefin text-3xl font-bold mb-6">
             Unique Features Of Latest & Trending Products
           </h2>
 
@@ -41,7 +43,7 @@ function Unique() {
             {/* Point 1 */}
             <li className="flex items-start">
               <div className="w-4 h-4 rounded-full bg-red-500 flex-shrink-0 mt-1 mr-4"></div>
-              <p className="text-gray-600">
+              <p className="text-gray-400 font-lato">
                 All frames constructed with hardwood solids and laminates.
               </p>
             </li>
@@ -49,7 +51,7 @@ function Unique() {
             {/* Point 2 */}
             <li className="flex items-start">
               <div className="w-4 h-4 rounded-full bg-[#3F509E] flex-shrink-0 mt-1 mr-4"></div>
-              <p className="text-gray-600">
+              <p className="text-gray-400  font-lato">
                 Reinforced with double wood dowels, glue, screw-nails, corner
                 blocks, and machine nails.
               </p>
@@ -58,7 +60,7 @@ function Unique() {
             {/* Point 3 */}
             <li className="flex items-start">
               <div className="w-4 h-4 rounded-full bg-green-500 flex-shrink-0 mt-1 mr-4"></div>
-              <p className="text-gray-600">
+              <p className="text-gray-400  font-lato">
                 Arms, backs, and seats are structurally reinforced.
               </p>
             </li>
@@ -67,15 +69,15 @@ function Unique() {
           <div className="flex items-center gap-4">
       {/* Add to Cart Button */}
       <Link href="/cart">
-        <button className="bg-pink-500 text-white py-2 px-6 rounded-lg hover:bg-pink-600 transition-colors">
+        <button className="bg-pink-500 font-josefin text-white py-2 px-6 rounded-sm hover:bg-pink-600 transition-colors">
           Add To Cart
         </button>
       </Link>
 
             {/* Additional Text */}
             <div>
-              <p className="text-[#3F509E] font-semibold text-sm">B&B Italian Sofa</p>
-              <p className="text-[#3F509E] font-bold text-sm">$32.00</p>
+              <p className="text-[#151875] font-josefin font-semibold text-sm">B&B Italian Sofa</p>
+              <p className="text-[#151875] font-bold font-josefin text-sm">$32.00</p>
             </div>
           </div>
         </div>
